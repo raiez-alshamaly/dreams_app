@@ -1,7 +1,11 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
-
+@tailwind utilities; */
+@import 'bootstrap.rtl.min.css';
+@import 'font-awesome-6.4-all.min.css';
+@import 'font-cairo.css';
+@import 'style.css';
+ 
 [x-cloak] {
     display: none;
 }
