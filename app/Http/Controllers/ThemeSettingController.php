@@ -8,6 +8,7 @@ class ThemeSettingController extends Controller
     public function edit()
     {
         $theme = ThemeSetting::first(); // نفترض في صف واحد فقط
+        dd($theme);
         return view('dashboard.theme_settings.edit', compact('theme'));
     }
 

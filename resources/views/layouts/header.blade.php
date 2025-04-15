@@ -10,8 +10,11 @@
 
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+   
+    @if($theme)
     <style>
        
+   
     :root {
         --primary-color:# {{ $theme['primary-color'] }};
         --secondary-color: #{{ $theme['secondary-color'] }};
@@ -22,7 +25,9 @@
         --text-dark: #{{ $theme['text-dark'] }};
         --dark-background: #{{ $theme['dark-background'] }};
     }
+    
 </style>
+@endif
     
 
 

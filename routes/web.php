@@ -2,9 +2,16 @@
 
 use App\Http\Controllers\ThemeSettingController;
 use Illuminate\Support\Facades\Route;
- 
+use Illuminate\Support\Facades\View;
+use App\Models\ThemeSetting;
 
-Route::view('/' ,'welcome' ,[
+
+View::composer('*', function ($view) {
+    $theme = ThemeSetting::first();
+    $view->with('theme', $theme);
+});
+
+Route::view('/', 'welcome', [
     'dreams' => [],
     'fulfilledDreams' => [],
 ])->name('start');
@@ -25,11 +32,11 @@ Route::group(
 
 
 Route::group(['prefix' => 'admin/'], function () {
-   
+
     Route::post('fulfill_dream', [DashboardController::class, 'fulfill_dream']);
     Route::get('random', [DashboardController::class, 'random_dream']);
     Route::post('dream/delete', [DreamController::class, 'delete_dream']);
-    Route::post('dream/accept' , [DreamController::class , 'accept']);
+    Route::post('dream/accept', [DreamController::class, 'accept']);
 });
 
 
