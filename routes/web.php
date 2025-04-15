@@ -4,6 +4,23 @@ use App\Http\Controllers\ThemeSettingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use App\Models\ThemeSetting;
+use Laravel\Fortify\Fortify;
+use Laravel\Jetstream\Features;
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+Fortify::registerView(function () {
+    abort(404);
+});
+
 
 
 View::composer('*', function ($view) {
@@ -40,15 +57,7 @@ Route::group(['prefix' => 'admin/'], function () {
 });
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard/theme-settings', [ThemeSettingController::class, 'edit'])->name('theme-settings.edit');
     Route::put('/dashboard/theme-settings', [ThemeSettingController::class, 'update'])->name('theme-settings.update');
