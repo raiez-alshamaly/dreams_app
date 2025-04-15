@@ -15,8 +15,8 @@
                 <div class="ticker-track">
                     @foreach ($fulfilledDreams as $dream)
                         <div class="ticker-item">
-                            <span class="ticker-name"><?php ec($dream->full_name); ?></span>
-                            <span class="ticker-amount"><?php ec($dream->amount); ?> ل.س</span>
+                            <span class="ticker-name">{{ $dream->full_name}}</span>
+                            <span class="ticker-amount">{{ $dream->amount }} ل.س</span>
                         </div>
                     @endforeach
                 </div>

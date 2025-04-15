@@ -2,11 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\ThemeSetting;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Psy\Output\Theme;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,6 +18,7 @@ class DatabaseSeeder extends Seeder
             [
                 UserSeeder::class,
                 ThemeSettingSeeder::class,
+                DreamSeeder::class,
             ]
         );
     }

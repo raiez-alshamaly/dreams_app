@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ThemeSettingController;
+use App\Models\Dream;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use App\Models\ThemeSetting;
@@ -29,7 +30,7 @@ View::composer('*', function ($view) {
 });
 
 Route::view('/', 'welcome', [
-    'dreams' => [],
+    'dreams' => Dream::all(),
     'fulfilledDreams' => [],
 ])->name('start');
 
@@ -39,8 +40,8 @@ Route::group(
         'as' => 'dreams.'
     ],
     function () {
-        Route::get('create', [DreamController::class, 'create'])->name('create');
-        Route::post('store', [DreamController::class, 'store'])->name('store');
+        // Route::get('create', [DreamController::class, 'create'])->name('create');
+        // Route::post('store', [DreamController::class, 'store'])->name('store');
     }
 );
 
@@ -50,10 +51,10 @@ Route::group(
 
 Route::group(['prefix' => 'admin/'], function () {
 
-    Route::post('fulfill_dream', [DashboardController::class, 'fulfill_dream']);
-    Route::get('random', [DashboardController::class, 'random_dream']);
-    Route::post('dream/delete', [DreamController::class, 'delete_dream']);
-    Route::post('dream/accept', [DreamController::class, 'accept']);
+    // Route::post('fulfill_dream', [DashboardController::class, 'fulfill_dream']);
+    // Route::get('random', [DashboardController::class, 'random_dream']);
+    // Route::post('dream/delete', [DreamController::class, 'delete_dream']);
+    // Route::post('dream/accept', [DreamController::class, 'accept']);
 });
 
 
