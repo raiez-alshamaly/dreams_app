@@ -7,18 +7,24 @@ class ThemeSettingController extends Controller
 {
     public function edit()
     {
-        $settings = ThemeSetting::all()->pluck('value', 'key');
-        return view('dashboard.theme_settings.edit', compact('settings'));
+        $theme = ThemeSetting::first(); // نفترض في صف واحد فقط
+        return view('dashboard.theme_settings.edit', compact('theme'));
     }
 
     public function update(Request $request)
     {
-        $data = $request->only(['background_color', 'text_color', 'btn_color']);
+        $theme = ThemeSetting::first();
+        $data = $request->only([
+            'primary-color', 'secondary-color',
+            'light-primary', 'light-secondary',
+            'accent-color', 'text-light',
+            'text-dark', 'dark-background'
+        ]);
 
-        foreach ($data as $key => $value) {
-            ThemeSetting::updateOrCreate(['key' => $key], ['value' => $value]);
+        if ($theme) {
+            $theme->update($data);
         }
 
-        return redirect()->back()->with('success', 'تم تحديث إعدادات الثيم بنجاح.');
+        return redirect()->route('theme-settings.edit')->with('success', 'تم حفظ إعدادات الثيم');
     }
 }

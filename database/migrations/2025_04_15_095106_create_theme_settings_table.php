@@ -6,15 +6,20 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    
     public function up(): void
     {
         Schema::create('theme_settings', function (Blueprint $table) {
             $table->id();
             $table->string('key')->unique();
-            $table->string('value');
+            $table->string('primary-color');
+            $table->string('secondary-color');
+            $table->string('light-primary');
+            $table->string('light-secondary');
+            $table->string('accent-color');
+            $table->string('text-light');
+            $table->string('text-dark');
+            $table->string('dark-background');
             $table->timestamps();
         });
 

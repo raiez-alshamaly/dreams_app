@@ -11,22 +11,19 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
-        body {
-            background-color:
-                {{ \App\Models\ThemeSetting::where('key', 'background_color')->value('value') ?? '#ffffff' }}
-            ;
-            color:
-                {{ \App\Models\ThemeSetting::where('key', 'text_color')->value('value') ?? '#000000' }}
-            ;
-        }
+       
+    :root {
+        --primary-color: {{ $theme['primary-color'] }};
+        --secondary-color: {{ $theme['secondary-color'] }};
+        --light-primary: {{ $theme['light-primary'] }};
+        --light-secondary: {{ $theme['light-secondary'] }};
+        --accent-color: {{ $theme['accent-color'] }};
+        --text-light: {{ $theme['text-light'] }};
+        --text-dark: {{ $theme['text-dark'] }};
+        --dark-background: {{ $theme['dark-background'] }};
+    }
+</style>
     
-        .btn-custom {
-            background-color:
-                {{ \App\Models\ThemeSetting::where('key', 'btn_color')->value('value') ?? '#ff6600' }}
-            ;
-            color: #fff;
-        }
-    </style>
 
 
 </head>
@@ -50,12 +47,12 @@
                     </li>
 
                     @auth
-                    <li class="nav-item">
-                        <a class="nav-link  <?php    ec(is_url('/admin/dashboard') ? 'active' : '');  ?>" href="<?php    ec('/admin/dashboard'); ?>">لوحة التحكم</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  <?php    ec(is_url('/admin/logout') ? 'active' : '');  ?> " href="<?php    ec('/admin/logout'); ?>">تسجيل الخروج</a>
-                    </li>
+                                <li class="nav-item">
+                <a class="nav-link {{   Route::is('/admin/dashboard') ? 'active' : ''}}" href="{{ Route('dashboard') }}">لوحة التحكم</a>
+                                </li>
+                                <li class="nav-item">
+                <a class="nav-link {{   Route::is('/admin/logout') ? 'active' : ''}} " href="{{ Route('logout') }}">تسجيل الخروج</a>
+                                </li>
                     @endauth
 
                      
