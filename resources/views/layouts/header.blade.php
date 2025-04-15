@@ -13,14 +13,14 @@
     <style>
        
     :root {
-        --primary-color: {{ $theme['primary-color'] }};
-        --secondary-color: {{ $theme['secondary-color'] }};
-        --light-primary: {{ $theme['light-primary'] }};
-        --light-secondary: {{ $theme['light-secondary'] }};
-        --accent-color: {{ $theme['accent-color'] }};
-        --text-light: {{ $theme['text-light'] }};
-        --text-dark: {{ $theme['text-dark'] }};
-        --dark-background: {{ $theme['dark-background'] }};
+        --primary-color:# {{ $theme['primary-color'] }};
+        --secondary-color: #{{ $theme['secondary-color'] }};
+        --light-primary:# {{ $theme['light-primary'] }};
+        --light-secondary: #{{ $theme['light-secondary'] }};
+        --accent-color: #{{ $theme['accent-color'] }};
+        --text-light:# {{ $theme['text-light'] }};
+        --text-dark: #{{ $theme['text-dark'] }};
+        --dark-background: #{{ $theme['dark-background'] }};
     }
 </style>
     
