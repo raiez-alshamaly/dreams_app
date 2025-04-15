@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\ThemeSettingController;
 use Illuminate\Support\Facades\Route;
-
+ 
 
 Route::view('/' ,'welcome' ,[
     'dreams' => [],
@@ -40,4 +41,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard/theme-settings', [ThemeSettingController::class, 'edit'])->name('theme-settings.edit');
+    Route::put('/dashboard/theme-settings', [ThemeSettingController::class, 'update'])->name('theme-settings.update');
 });

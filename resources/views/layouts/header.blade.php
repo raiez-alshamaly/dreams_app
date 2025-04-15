@@ -10,6 +10,23 @@
 
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <style>
+        body {
+            background-color:
+                {{ \App\Models\ThemeSetting::where('key', 'background_color')->value('value') ?? '#ffffff' }}
+            ;
+            color:
+                {{ \App\Models\ThemeSetting::where('key', 'text_color')->value('value') ?? '#000000' }}
+            ;
+        }
+    
+        .btn-custom {
+            background-color:
+                {{ \App\Models\ThemeSetting::where('key', 'btn_color')->value('value') ?? '#ff6600' }}
+            ;
+            color: #fff;
+        }
+    </style>
 
 
 </head>
@@ -34,10 +51,10 @@
 
                     @auth
                     <li class="nav-item">
-                        <a class="nav-link  <?php ec( is_url('/admin/dashboard') ? 'active' : '' );  ?>" href="<?php ec('/admin/dashboard'); ?>">لوحة التحكم</a>
+                        <a class="nav-link  <?php    ec(is_url('/admin/dashboard') ? 'active' : '');  ?>" href="<?php    ec('/admin/dashboard'); ?>">لوحة التحكم</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  <?php ec( is_url('/admin/logout') ? 'active' : '' );  ?> " href="<?php ec('/admin/logout'); ?>">تسجيل الخروج</a>
+                        <a class="nav-link  <?php    ec(is_url('/admin/logout') ? 'active' : '');  ?> " href="<?php    ec('/admin/logout'); ?>">تسجيل الخروج</a>
                     </li>
                     @endauth
 
