@@ -1,6 +1,6 @@
-@extends('layouts.header')
+@include('layouts.header')
 
-@section('content')
+
     <div class="container mx-auto mt-10">
         <h1 class="text-2xl font-bold mb-6">لوحة التحكم</h1>
 
@@ -36,8 +36,9 @@
             </form>
         </div>
 
+        <livewire:data-table.dream-table>
         {{-- عرض الأحلام --}}
-        <div class="bg-white rounded-lg shadow p-6">
+        {{-- <div class="bg-white rounded-lg shadow p-6">
             <h2 class="text-lg font-semibold mb-4">إدارة جميع الأحلام</h2>
             @if($dreams->isEmpty())
                 <p class="text-center">لا توجد أحلام للعرض.</p>
@@ -90,6 +91,5 @@
                     </table>
                 </div>
             @endif
-        </div>
+        </div> --}}
     </div>
-@endsection

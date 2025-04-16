@@ -30,7 +30,7 @@ View::composer('*', function ($view) {
 });
 
 Route::view('/', 'welcome', [
-    'dreams' => Dream::all(),
+    'dreams' => Dream::paginate(10),
     'fulfilledDreams' => [],
 ])->name('start');
 
