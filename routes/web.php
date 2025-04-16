@@ -31,7 +31,7 @@ View::composer('*', function ($view) {
 
 Route::view('/', 'welcome', [
     'dreams' => Dream::paginate(10),
-    'fulfilledDreams' => [],
+    "fulfilledDreams"=>Dream::query()->limit(10)->get(),
 ])->name('start');
 
 Route::group(

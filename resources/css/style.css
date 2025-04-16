@@ -172,7 +172,25 @@ body {
     float: right;
     width: 120px;
 }
+ @keyframes ticker-slide {
+        0% {
+            transform: translateX(0);
+        }
 
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .ticker-track {
+        animation: ticker-slide 20s linear infinite;
+        abba: inherit;
+    }
+
+    .ticker-track.cloned {
+        animation-delay: 10s;
+        /* تأخير للنسخة المستنسخة */
+    }
 .ticker-container {
     height: 100%;
     width: calc(100% - 120px);
