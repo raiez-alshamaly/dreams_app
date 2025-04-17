@@ -106,8 +106,8 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="container mx-auto flex items-center justify-between">
+    <nav class="navbar not-blur">
+        <div class="container mx-auto flex items-center justify-between ">
             <!-- اسم التطبيق -->
             <a class="navbar-brand flex items-center gap-2" href="/">
                 <i class="fas fa-star-half-alt"></i>
