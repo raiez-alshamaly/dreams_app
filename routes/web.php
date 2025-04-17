@@ -3,10 +3,8 @@
 use App\Http\Controllers\ThemeSettingController;
 use App\Models\Dream;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\View;
-use App\Models\ThemeSetting;
 use Laravel\Fortify\Fortify;
-use Laravel\Jetstream\Features;
+
 
 Route::middleware([
     'auth:sanctum',

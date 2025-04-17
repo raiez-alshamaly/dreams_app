@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\DreamStatusEnum;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class DreamFactory extends Factory
 {
+    public $status = [DreamStatusEnum::APPROVE->value , DreamStatusEnum::PENDING->value];
     /**
      * Define the model's default state.
      *
@@ -16,11 +18,14 @@ class DreamFactory extends Factory
      */
     public function definition(): array
     {
+
+
         return [
             'full_name' => fake()->name(),
             'description'=> fake()->sentence(),
             'amount' => fake()->numberBetween(1,1000),
             'image_path' => null ,
+            'status' => $this->status[fake()->numberBetween(0,1)],
         ];
     }
 }
