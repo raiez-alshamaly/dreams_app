@@ -11,14 +11,9 @@
         "laravel/jetstream": "^5.3",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
-<<<<<<< HEAD
-        "livewire/livewire": "^3.6",
-        "rappasoft/laravel-livewire-tables": "*"
-=======
         "livewire/livewire": "^3.0",
         "mekad/laravel-theme-customizer": "^0.0.4",
         "rappasoft/laravel-livewire-tables": "^3.7"
->>>>>>> 9e4909bc1b0bf78a5eb861fb379cd29ee3151c34
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
