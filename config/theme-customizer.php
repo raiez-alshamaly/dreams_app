@@ -23,7 +23,7 @@ return [
     | - user: Each user can manage their own themes
     |
     */
-    'theme_mode' => 'user',
+    'theme_mode' => 'admin',
 
     /*
     |--------------------------------------------------------------------------
