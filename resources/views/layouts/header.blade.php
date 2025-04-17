@@ -7,28 +7,18 @@
     <title>{{ config('app.name') }}</title>
 
     <!-- إدراج Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    {{-- <script src="https://cdn.tailwindcss.com"></script>
     <!-- إدراج Bootstrap لدعم collapse -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- إدراج Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> --}}
     <!-- إدراج Vite لملفات CSS وJS -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    <x-LaravelThemeCustomizer::theme-css />
     @if($theme)
         <style>
-            :root {
-                --primary-color: #{{ $theme['primary-color'] }};
-                --secondary-color: #{{ $theme['secondary-color'] }};
-                --light-primary: #{{ $theme['light-primary'] }};
-                --light-secondary: #{{ $theme['light-secondary'] }};
-                --accent-color: #{{ $theme['accent-color'] }};
-                --text-light: #{{ $theme['text-light'] }};
-                --text-dark: #{{ $theme['text-dark'] }};
-                --dark-background: #{{ $theme['dark-background'] }};
-            }
-
+         
             body {
                 font-family: 'Cairo', sans-serif;
                 background-color: var(--dark-background);

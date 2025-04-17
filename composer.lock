@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2cbfac94193b24bd7c707702147cce9c",
+    "content-hash": "72af6ee8db3aa860cc3c6a14593da9b0",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2531,6 +2531,53 @@
                 }
             ],
             "time": "2025-04-12T22:26:52+00:00"
+        },
+        {
+            "name": "mekad/laravel-theme-customizer",
+            "version": "0.0.4.53",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mekadalibrahem/laravel-theme-customizer.git",
+                "reference": "ab312eb783eb4389b6ff09cf6b11646fa9d2e4aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mekadalibrahem/laravel-theme-customizer/zipball/ab312eb783eb4389b6ff09cf6b11646fa9d2e4aa",
+                "reference": "ab312eb783eb4389b6ff09cf6b11646fa9d2e4aa",
+                "shasum": ""
+            },
+            "require-dev": {
+                "orchestra/testbench": "^10.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Mekad\\LaravelThemeCustomizer\\ThemeCustomizerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mekad\\LaravelThemeCustomizer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "mekadalibrahem",
+                    "email": "mekadalibrahem123@gmail.com"
+                }
+            ],
+            "description": "A Laravel package for theme customization with TailwindCSS and Bootstrap support",
+            "support": {
+                "issues": "https://github.com/mekadalibrahem/laravel-theme-customizer/issues",
+                "source": "https://github.com/mekadalibrahem/laravel-theme-customizer/tree/0.0.4.53"
+            },
+            "time": "2025-04-16T19:28:06+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",

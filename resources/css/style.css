@@ -1,16 +1,16 @@
 :root {
-    --primary-color: #1a3a6c;
+    /* --primary-color: #1a3a6c; */
     /* Dark Blue */
-    --secondary-color: #1e4d45;
+    /* --secondary-color: #1e4d45; */
     /* Dark Green */
-    --light-primary: #2c5eaa;
+    /* --light-primary: #2c5eaa;
     --light-secondary: #2a6b5f;
     --accent-color: #ffc107;
     --text-light: #f8f9fa;
-    --text-dark: #343a40;
+    --text-dark: #343a40; */
     --border-radius: 8px;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --dark-background: #1a1a24;
+    /* --dark-background: #1a1a24; */
     /* Even darker background */
 }
 

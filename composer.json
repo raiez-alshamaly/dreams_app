@@ -12,6 +12,7 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
+        "mekad/laravel-theme-customizer": "^0.0.4",
         "rappasoft/laravel-livewire-tables": "^3.7"
     },
     "require-dev": {
