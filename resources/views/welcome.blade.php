@@ -1,3 +1,17 @@
+@php
+    $loaderType = \App\Models\Setting::getValue('loader_type', 'image');
+    $loaderText = \App\Models\Setting::getValue('loader_text', 'جاري التحميل...');
+    $loaderImage = \App\Models\Setting::getValue('loader_image');
+    $loaderVideo = \App\Models\Setting::getValue('loader_video');
+@endphp
+
+<x-loader 
+    :type="$loaderType"
+    :loader-text="$loaderText"
+    :image-url="$loaderImage"
+    :video-url="$loaderVideo"
+/>
+
 @include('layouts.header')
 
 <div class="container mx-auto px-4 py-6 bg-white/5 rounded-lg mt-6 mb-6">
