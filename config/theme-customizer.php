@@ -23,7 +23,7 @@ return [
     | - user: Each user can manage their own themes
     |
     */
-    'theme_mode' => 'user',
+    'theme_mode' => 'admin',
 
     /*
     |--------------------------------------------------------------------------
@@ -43,7 +43,7 @@ return [
         | Set to false to disable role checking completely.
         |
         */
-        'enabled' => true,
+        'enabled' => false,
 
         /*
         |--------------------------------------------------------------------------

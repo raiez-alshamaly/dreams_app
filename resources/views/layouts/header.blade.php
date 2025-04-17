@@ -16,6 +16,7 @@
     <!-- إدراج Vite لملفات CSS وJS -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <x-LaravelThemeCustomizer::theme-css />
+    {{-- @dd($theme , config('theme-customizer.default_colors')) --}}
     @if($theme)
         <style>
          
