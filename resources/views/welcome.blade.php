@@ -53,7 +53,7 @@
         transform: translateY(0);
     }
 
-    /* Pagination Styling */
+    /* Pagination Styling
     .pagination {
         @apply flex items-center justify-between space-x-2;
     }
@@ -72,7 +72,7 @@
 
     .pagination .disabled .page-link {
         @apply opacity-50 cursor-not-allowed;
-    }
+    } */
 </style>
 
 <script>

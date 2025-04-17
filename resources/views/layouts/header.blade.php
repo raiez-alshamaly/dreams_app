@@ -11,8 +11,8 @@
 </head>
 
 <body class="font-['Cairo'] bg-[var(--dark-background)] text-[var(--text-light)] leading-relaxed">
-    <nav class="bg-gradient-to-r from-[var(--dark-background)] to-[var(--primary-color)] shadow-md py-2 px-4">
-        <div class="container mx-auto flex items-center justify-between md:justify-normal">
+    <nav class="not-blur bg-gradient-to-r from-[var(--dark-background)] to-[var(--primary-color)] shadow-md py-1 px-2">
+        <div class="not-blur  mx-auto flex items-center justify-between md:justify-normal">
             <!-- اسم التطبيق -->
             <a class="text-xl font-bold text-[var(--text-light)] flex items-center gap-2 shrink-0" href="/">
                 <i class="fas fa-star-half-alt"></i>
