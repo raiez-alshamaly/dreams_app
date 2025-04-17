@@ -36,10 +36,13 @@
                             </a>
                         </li>
                         <li>
-                            <a class="text-sm font-medium text-[var(--text-light)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--accent-color)] transition-colors" 
-                               href="{{ Route('logout') }}">
-                                <i class="fas fa-sign-out-alt me-1"></i> تسجيل الخروج
-                            </a>
+                            <form action="{{ Route('logout') }}" method="POST" >
+                                @csrf
+                                <button type="submit" class="text-sm font-medium text-[var(--text-light)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--accent-color)] transition-colors">
+                                    <i class="fas fa-sign-out-alt me-1"></i> تسجيل الخروج
+                                </button>
+    
+                            </form>
                         </li>
                     @endauth
                 </ul>
