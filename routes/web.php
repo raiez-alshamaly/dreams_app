@@ -24,10 +24,10 @@ Fortify::registerView(function () {
 
 
 
-View::composer('*', function ($view) {
-    $theme = ThemeSetting::first();
-    $view->with('theme', $theme);
-});
+// View::composer('*', function ($view) {
+//     $theme = ThemeSetting::first();
+//     $view->with('theme', $theme);
+// });
 
 Route::view('/', 'welcome', [
     'dreams' => Dream::paginate(10),
