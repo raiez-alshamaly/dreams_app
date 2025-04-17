@@ -19,138 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Form validation for dream submission
-    const dreamForm = document.getElementById('dreamForm');
+  
 
-    if (dreamForm) {
-        dreamForm.addEventListener('submit', function (e) {
-            let isValid = true;
-
-            // Validate name
-            const nameInput = document.getElementById('fullName');
-            if (!nameInput.value.trim()) {
-                showValidationError(nameInput, 'الرجاء إدخال الاسم الكامل');
-                isValid = false;
-            } else {
-                clearValidationError(nameInput);
-            }
-
-            // Validate description
-            const descInput = document.getElementById('dreamDescription');
-            if (!descInput.value.trim()) {
-                showValidationError(descInput, 'الرجاء إدخال وصف للحلم');
-                isValid = false;
-            } else {
-                clearValidationError(descInput);
-            }
-
-            // Validate amount
-            const amountInput = document.getElementById('dreamAmount');
-            if (!amountInput.value.trim()) {
-                showValidationError(amountInput, 'الرجاء إدخال المبلغ');
-                isValid = false;
-            } else if (isNaN(amountInput.value) || parseInt(amountInput.value) <= 0) {
-                showValidationError(amountInput, 'الرجاء إدخال مبلغ صحيح');
-                isValid = false;
-            } else {
-                clearValidationError(amountInput);
-            }
-
-            // Validate image file type and size
-            if (imageUpload && imageUpload.files.length > 0) {
-                const file = imageUpload.files[0];
-                const validTypes = ['image/jpeg', 'image/jpg', 'image/png'];
-                const maxFileSize = 1 * 1024 * 1024; // 1MB
-
-                if (!validTypes.includes(file.type)) {
-                    showValidationError(imageUpload, 'الرجاء اختيار صورة بصيغة مدعومة (JPG, PNG) فقط');
-                    isValid = false;
-                } else if (file.size > maxFileSize) {
-                    showValidationError(imageUpload, 'يجب أن لا يتجاوز حجم الصورة 1 ميجابايت');
-                    isValid = false;
-                } else {
-                    clearValidationError(imageUpload);
-                }
-            }
-
-            if (!isValid) {
-                e.preventDefault();
-            }
-        });
-    }
-
-    // Form validation for admin login
-    const loginForm = document.getElementById('loginForm');
-
-    if (loginForm) {
-        loginForm.addEventListener('submit', function (e) {
-            let isValid = true;
-
-            // Validate username
-            const usernameInput = document.getElementById('username');
-            if (!usernameInput.value.trim()) {
-                showValidationError(usernameInput, 'الرجاء إدخال اسم المستخدم');
-                isValid = false;
-            } else {
-                clearValidationError(usernameInput);
-            }
-
-            // Validate password
-            const passwordInput = document.getElementById('password');
-            if (!passwordInput.value) {
-                showValidationError(passwordInput, 'الرجاء إدخال كلمة المرور');
-                isValid = false;
-            } else {
-                clearValidationError(passwordInput);
-            }
-
-            if (!isValid) {
-                e.preventDefault();
-            }
-        });
-    }
-
-    // Admin random dream criteria form
-    const randomCriteriaForm = document.getElementById('randomCriteriaForm');
-
-    if (randomCriteriaForm) {
-        randomCriteriaForm.addEventListener('submit', function (e) {
-            let isValid = true;
-
-            // Validate min amount
-            const minAmountInput = document.getElementById('minAmount');
-            if (minAmountInput.value && (isNaN(minAmountInput.value) || parseInt(minAmountInput.value) < 0)) {
-                showValidationError(minAmountInput, 'الرجاء إدخال مبلغ صحيح');
-                isValid = false;
-            } else {
-                clearValidationError(minAmountInput);
-            }
-
-            // Validate max amount
-            const maxAmountInput = document.getElementById('maxAmount');
-            if (maxAmountInput.value && (isNaN(maxAmountInput.value) || parseInt(maxAmountInput.value) <= 0)) {
-                showValidationError(maxAmountInput, 'الرجاء إدخال مبلغ صحيح');
-                isValid = false;
-            } else {
-                clearValidationError(maxAmountInput);
-            }
-
-            // Check if min amount is greater than max amount
-            if (isValid && minAmountInput.value && maxAmountInput.value) {
-                const minAmount = parseInt(minAmountInput.value);
-                const maxAmount = parseInt(maxAmountInput.value);
-
-                if (minAmount > maxAmount) {
-                    showValidationError(maxAmountInput, 'يجب أن يكون الحد الأقصى أكبر من الحد الأدنى');
-                    isValid = false;
-                }
-            }
-
-            if (!isValid) {
-                e.preventDefault();
-            }
-        });
-    }
 
     // Delete dream confirmation
     const deleteButtons = document.querySelectorAll('.delete-dream');
@@ -178,32 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Functions for validation error handling
-    function showValidationError(input, message) {
-        // Remove any existing error message
-        clearValidationError(input);
 
-        // Add invalid class to input
-        input.classList.add('is-invalid');
-
-        // Create error message
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'invalid-feedback';
-        errorDiv.textContent = message;
-
-        // Insert error message after input
-        input.parentNode.appendChild(errorDiv);
-    }
-
-    function clearValidationError(input) {
-        input.classList.remove('is-invalid');
-
-        // Remove any existing error message
-        const errorDiv = input.parentNode.querySelector('.invalid-feedback');
-        if (errorDiv) {
-            errorDiv.remove();
-        }
-    }
+   
 
 
 });
@@ -256,27 +102,3 @@ function setupNewTicker() {
 // Initialize the new ticker
 setupNewTicker();
 
-// Update ticker when window is resized
-window.addEventListener('resize', setupNewTicker);
-
-document.addEventListener('DOMContentLoaded', () => {
-    const tickerContainer = document.querySelector('.ticker-container');
-    const tickerTrack = document.querySelector('.ticker-track');
-    if (tickerContainer && tickerTrack) {
-        const trackWidth = tickerTrack.scrollWidth;
-        const containerWidth = tickerContainer.offsetWidth;
-
-        if (trackWidth <= containerWidth) {
-            tickerTrack.style.animation = 'none';
-            return;
-        }
-
-        const clone = tickerTrack.cloneNode(true);
-        tickerContainer.appendChild(clone);
-
-        const duration = trackWidth / 50;
-        tickerTrack.style.animationDuration = `${duration}s`;
-        clone.style.animationDuration = `${duration}s`;
-        clone.style.animationDelay = `${duration / 2}s`;
-    }
-});
