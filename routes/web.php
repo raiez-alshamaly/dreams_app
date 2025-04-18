@@ -67,9 +67,6 @@ Route::group(['prefix' => 'admin/'], function () {
 
 
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard/theme-settings', [ThemeSettingController::class, 'edit'])->name('theme-settings.edit');
-    Route::put('/dashboard/theme-settings', [ThemeSettingController::class, 'update'])->name('theme-settings.update');
-});
+
 
 require_once __DIR__ .'/web/test.php';
