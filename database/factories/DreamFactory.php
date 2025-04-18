@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Enums\DreamStatusEnum;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,7 @@ class DreamFactory extends Factory
      */
     public function definition(): array
     {
-
+        $isDeleted = (bool)((fake()->numberBetween(1,2))%2);
 
         return [
             'full_name' => fake()->name(),
@@ -26,6 +27,7 @@ class DreamFactory extends Factory
             'amount' => fake()->numberBetween(1,1000),
             'image_path' => null ,
             'status' => $this->status[fake()->numberBetween(0,1)],
+            'deleted_at' => $isDeleted ? Carbon::now()->format('Y-m-d H:i:s') : null ,
         ];
     }
 }
