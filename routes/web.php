@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\DreamStatusEnum;
 use App\Http\Controllers\DreamController;
 use App\Http\Controllers\ThemeSettingController;
 use App\Models\Dream;
@@ -26,8 +27,8 @@ Fortify::registerView(function () {
 
 
 Route::view('/', 'welcome', [
-    'dreams' => Dream::paginate(10),
-    "fulfilledDreams"=>Dream::query()->limit(10)->get(),
+    'dreams' => Dream::paginate(12),
+    "fulfilledDreams"=>Dream::status(DreamStatusEnum::APPROVE->value)->orderBy('updated_at', 'desc')->limit(20)->get(),
 ])->name('start');
 
 /**
