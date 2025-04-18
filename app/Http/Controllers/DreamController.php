@@ -13,7 +13,7 @@ class DreamController extends Controller
      */
     public function index()
     {
-        //
+        return view('dreams.index');
     }
 
     /**
@@ -21,7 +21,7 @@ class DreamController extends Controller
      */
     public function create()
     {
-        //
+        return  "VIEW CRETE NEW DARME PAGE";
     }
 
     /**
@@ -29,7 +29,7 @@ class DreamController extends Controller
      */
     public function store(StoreDreamRequest $request)
     {
-        //
+        return "STORE NEW DRAME AND THEN RETURN RESULT TO CREATE PAGE OR USER";
     }
 
     /**
@@ -37,7 +37,7 @@ class DreamController extends Controller
      */
     public function show(Dream $dream)
     {
-        //
+        return "VIEW WITH DREAM INFORMATION";
     }
 
     /**
@@ -45,7 +45,7 @@ class DreamController extends Controller
      */
     public function edit(Dream $dream)
     {
-        //
+        return "VIEW TO EDIT DREAM PAGE ";
     }
 
     /**
@@ -53,7 +53,7 @@ class DreamController extends Controller
      */
     public function update(UpdateDreamRequest $request, Dream $dream)
     {
-        //
+        return "UPDATE DREAM THEN REDIRECT TI USER";
     }
 
     /**
@@ -61,6 +61,6 @@ class DreamController extends Controller
      */
     public function destroy(Dream $dream)
     {
-        //
+        return "DELETE DREAM THEN RETURN TO USER";
     }
 }
