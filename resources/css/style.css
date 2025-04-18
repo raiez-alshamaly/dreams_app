@@ -173,7 +173,6 @@ body {
 
     .ticker-track {
         animation: ticker-slide 20s linear infinite;
-        abba: inherit;
     }
 
     .ticker-track.cloned {
