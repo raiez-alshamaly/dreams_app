@@ -22,7 +22,10 @@ class StoreDreamRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'full_name' =>['required'],
+            'description' =>['required'],
+            'amount' =>['required'],
+            // 'image_path' => ['required'],
         ];
     }
 }

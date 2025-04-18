@@ -8,6 +8,7 @@ use App\Models\Dream;
 
 class DreamController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
@@ -29,6 +30,26 @@ class DreamController extends Controller
      */
     public function store(StoreDreamRequest $request)
     {
+        $request->validated();
+        $full_name = $request['full_name'] ;
+        $description = $request['description'] ;
+        $amount = $request['amount'] ;
+        $image_path = $request['image_path'] ;
+
+        $dream = new Dream();
+        $dream->full_name = $full_name;
+        $dream->description = $description;
+        $dream->amount = $amount;
+        $dream->image_path = $image_path;
+        if($dream->save()){
+            session()->flash('message', 'Dream created successfully');
+            // redirect()->back();
+        }else{
+            session()->flash('error', 'Error creating dream');
+            // redirect()->back();
+        }
+
+
         return "STORE NEW DRAME AND THEN RETURN RESULT TO CREATE PAGE OR USER";
     }
 
