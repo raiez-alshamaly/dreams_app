@@ -3,10 +3,10 @@
         onmouseenter="applyBlur(this)" onmouseleave="removeBlur()">
       
         <div
-            class="label absolute -top-8 left-1/2 -translate-x-1/2 bg-black/80 text-yellow-400 text-sm px-2 py-1 rounded pointer-events-none whitespace-nowrap opacity-0 transition-opacity duration-300">
+            class="label absolute -top-8 center-x -translate-x-1/2 bg-black/80 text-yellow-400 text-sm px-2 py-1 rounded pointer-events-none whitespace-nowrap opacity-0 transition-opacity duration-300">
             {{ $dream->full_name }}
             <span
-                class="absolute left-1/2 -bottom-1.5 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-black/80"></span>
+                class="absolute center-x  -bottom-1.5 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-black/80"></span>
         </div>
 
         @if (!empty($dream->image_path))

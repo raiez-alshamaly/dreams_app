@@ -2,7 +2,6 @@
 
 use App\Enums\DreamStatusEnum;
 use App\Http\Controllers\DreamController;
-use App\Http\Controllers\ThemeSettingController;
 use App\Models\Dream;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
