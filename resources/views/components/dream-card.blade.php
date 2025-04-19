@@ -10,8 +10,9 @@
         </div>
 
         @if (!empty($dream->image_path))
-            <div class="dream-image w-full h-full bg-cover bg-center rounded shadow"
-                style="background-image: url('{{ config('app.app_url') . '/storage/uploads/' . $dream->image_path }}')">
+            <div class="dream-image w-full h-full bg-cover bg-center rounded shadow">
+                <img src="{{ asset('storage/' . $dream->image_path) }}" alt="{{ $dream->full_name }}"   >
+                {{-- style="background-image: url('{{ config('app.app_url') . '/storage/uploads/' . $dream->image_path }}')"> --}}
             </div>
         @else
             <div

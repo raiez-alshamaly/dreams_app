@@ -27,7 +27,7 @@ Fortify::registerView(function () {
 
 Route::view('/', 'welcome', [
     'dreams' => Dream::paginate(12),
-    "fulfilledDreams"=>Dream::status(DreamStatusEnum::APPROVE->value)->orderBy('updated_at', 'desc')->limit(20)->get(),
+    "fulfilledDreams"=>Dream::status(DreamStatusEnum::APPROVE->value)->orderBy('updated_at', 'desc')->limit(10)->get(),
 ])->name('start');
 
 /**
