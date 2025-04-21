@@ -57,8 +57,8 @@ Route::group(['as' => 'dreams.'] , function(){
 
 
 
-Route::group(['prefix' => 'admin/'], function () {
-
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/' , function (){return view('admin.index');})->name('index');
     // Route::post('fulfill_dream', [DashboardController::class, 'fulfill_dream']);
     // Route::get('random', [DashboardController::class, 'random_dream']);
     // Route::post('dream/delete', [DreamController::class, 'delete_dream']);
