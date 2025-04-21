@@ -1,3 +1,3 @@
 
+import 'preline';
 import './scripts.js';
-import 'preline'
