@@ -32,6 +32,7 @@ class DreamTable extends DataTableComponent
             }
             return [];
         });
+        // $this->setFilterLayoutSlideDown();
         $this->setConfigurableAreas([
             'toolbar-right-end' => 'livewire.data-table.toolbar',
         ]);

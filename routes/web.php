@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\DreamStatusEnum;
+use App\Http\Controllers\Admin\AdminPageController;
 use App\Http\Controllers\DreamController;
 use App\Models\Dream;
 use Illuminate\Support\Facades\Route;
@@ -13,7 +14,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard',['dreams' => Dream::all()]);
+        return view('dashboard', ['dreams' => Dream::all()]);
     })->name('dashboard');
 });
 
@@ -27,7 +28,7 @@ Fortify::registerView(function () {
 
 Route::view('/', 'welcome', [
     'dreams' => Dream::paginate(12),
-    "fulfilledDreams"=>Dream::status(DreamStatusEnum::APPROVE->value)->orderBy('updated_at', 'desc')->limit(10)->get(),
+    "fulfilledDreams" => Dream::status(DreamStatusEnum::APPROVE->value)->orderBy('updated_at', 'desc')->limit(10)->get(),
 ])->name('start');
 
 /**
@@ -41,24 +42,26 @@ Route::view('/', 'welcome', [
  *   PUT/PATCH 	/photos/{photo} 	    update 	    photos.update
  *   DELETE 	/photos/{photo} 	    destroy 	photos.destroy
  */
-Route::group(['as' => 'dreams.'] , function(){
+Route::group(['as' => 'dreams.'], function () {
     // get all dreams
     Route::get('/dreams', [DreamController::class, 'index'])->name('index');
     Route::get('/dreams/create', [DreamController::class, 'create'])->name('create');
     Route::post('/dreams', [DreamController::class, 'store'])->name('store');
     Route::get('/dreams/{dream}', [DreamController::class, 'show'])->name('show');
     Route::get('/dreams/{dream}/edit', [DreamController::class, 'edit'])->name('edit');
-    Route::match(['PUT', 'PATCH'],'/dreams/{dream}', [DreamController::class, 'update'])->name('update');
+    Route::match(['PUT', 'PATCH'], '/dreams/{dream}', [DreamController::class, 'update'])->name('update');
     Route::delete('/dreams/{dream}', [DreamController::class, 'destroy'])->name('destroy');
-
 });
 
 
 
 
 
-Route::group(['prefix' => 'admin'], function () {
-    Route::get('/' , function (){return view('admin.index');})->name('index');
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('/', [AdminPageController::class, 'dashboard'])->name('index');
+    Route::get('/dreams', [AdminPageController::class, 'dreams'])->name('dreams');
+    Route::get('/themes', [AdminPageController::class, 'themes'])->name('themes');
+    Route::get('/loader', [AdminPageController::class, 'loader'])->name('loader');
     // Route::post('fulfill_dream', [DashboardController::class, 'fulfill_dream']);
     // Route::get('random', [DashboardController::class, 'random_dream']);
     // Route::post('dream/delete', [DreamController::class, 'delete_dream']);
@@ -69,4 +72,4 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
-require_once __DIR__ .'/web/test.php';
+require_once __DIR__ . '/web/test.php';

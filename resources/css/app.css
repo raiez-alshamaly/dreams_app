@@ -2,13 +2,16 @@
 @import "tailwindcss";
 @source "../views";
 
+@source '../../vendor/rappasoft/laravel-livewire-tables/resources/views/*.blade.php';
+
+
 /* Preline UI */
 @import "../../node_modules/preline/variants.css";
 @source "../../node_modules/preline/dist/*.js";
 
+@import "./style.css";
 
 
-/* @import './style.css'; */
 
 
 
