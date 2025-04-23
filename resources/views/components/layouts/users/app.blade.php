@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config('app.name') }}</title>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+   
+    <x-LaravelThemeCustomizer::theme-css />
+</head>
+
+<body class="font-['Cairo'] bg-color-dark-100 text-[var(--color-light-200)] leading-relaxed">
+    <x-layouts.users.header />
+     {{ 
+        $slot
+     }}
+    <x-layouts.users.footer   />

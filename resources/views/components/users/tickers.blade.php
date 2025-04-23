@@ -1,5 +1,3 @@
-
-
 <div id="news-ticker"
     class="ticker-wrap fixed bottom-0 w-full bg-gradient-to-r from-[#0c1523] to-[#0f1b2e] shadow-[0_-2px_5px_rgba(0,0,0,0.3)] text-[var(--color-light-50)] h-10 z-[100] overflow-hidden">
     <div
@@ -24,13 +22,3 @@
      
     </div>
 </div>
-
-<!-- التذييل -->
-<footer class="footer py-2 bg-color-dark-100 text-color-light-200 mt-4">
-    <div class="container mx-auto text-center">
-        <span class="text-sm">
-            جميع الحقوق محفوظة © {{ config('app.name') . ' ' . date('Y') }}
-        </span>
-    </div>
-</footer>
-
