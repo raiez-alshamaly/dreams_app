@@ -14,7 +14,7 @@ class DreamController extends Controller
      */
     public function index()
     {
-        return view('dreams.index');
+        // return view('dreams.index');
     }
 
     /**

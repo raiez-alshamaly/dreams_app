@@ -43,7 +43,8 @@ Route::view('/', 'welcome', [
  */
 Route::group(['as' => 'dreams.'], function () {
     // get all dreams
-    Route::get('/dreams', [DreamController::class, 'index'])->name('index');
+    // users can't show all dreams ( just admin) so block route
+    // Route::get('/dreams', [DreamController::class, 'index'])->name('index');
     Route::get('/dreams/create', [DreamController::class, 'create'])->name('create');
     Route::post('/dreams', [DreamController::class, 'store'])->name('store');
     Route::get('/dreams/{dream}', [DreamController::class, 'show'])->name('show');
