@@ -77,10 +77,15 @@
                     </li>
                 @endauth
                 <li>
-                    <a href="{{ route('dreams.create') }}" 
-                       class="block w-full text-center text-sm font-semibold px-3 py-2 bg-[var(--light-secondary)] border border-[var(--secondary-color)] text-[var(--text-dark)] rounded hover:bg-[var(--secondary-color)] hover:text-[var(--color-light-200)] transition-colors">
+                    <x-widgets.buttons.primary style="full" >
+                        <a href="{{ route('dreams.create') }}" >
+                         <i class="fas fa-plus-circle me-1"></i> أرسل حلمك
+                     </a>
+                    </x-widgets.buttons.primary>
+                    {{-- <a href="{{ route('dreams.create') }}" 
+                       class="block w-full text-center text-sm font-semibold px-3 py-2  border border-[var(--secondary-color)] text-[var(--text-dark)] rounded hover:bg-[var(--secondary-color)] hover:text-[var(--color-light-200)] transition-colors">
                         <i class="fas fa-plus-circle me-1"></i> أرسل حلمك
-                    </a>
+                    </a> --}}
                 </li>
             </ul>
         </div>

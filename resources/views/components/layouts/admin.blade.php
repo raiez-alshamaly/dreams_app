@@ -13,7 +13,7 @@
         <x-LaravelThemeCustomizer::theme-css />
        
       
-
+        @livewireStyles
        
     </head>
     <body class="font-sans antialiased">
@@ -31,7 +31,7 @@
       
        
         
-       
+       @livewireScripts
       
     </body>
 </html>

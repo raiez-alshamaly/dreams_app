@@ -31,14 +31,15 @@
     <!-- Call to Action Section -->
     <div class=" blureing bg-gradient-to-r from-blue-900/90 to-green-900/90 backdrop-blur-sm text-white p-8 rounded-xl shadow-xl text-center transform hover:scale-[1.02] transition-transform duration-300">
         <h1 class="text-3xl font-bold mb-4">
-            <i class="fas fa-star-half-alt me-2"></i>
+            <x-application-logo />
             DreamsUP - حقق أحلامك
         </h1>
         <p class="text-gray-200 mb-6 text-lg">منصة لمشاركة وتحقيق الأحلام، يمكنك مشاركة حلمك وقد يتم اختياره للتحقيق!</p>
-        <a href="{{ route('dreams.create') }}" 
-            class="inline-block bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-lg">
-            <i class="fas fa-plus-circle me-2"></i> شارك حلمك الآن
-        </a>
+        <x-widgets.buttons.primary  class="m-auto ">
+            <a href="{{ route('dreams.create') }}" >
+                <i class="fas fa-plus-circle me-2"></i> شارك حلمك الآن
+            </a>
+        </x-widgets.buttons.primary>
     </div>
 </div>
 

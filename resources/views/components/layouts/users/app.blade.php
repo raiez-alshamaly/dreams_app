@@ -1,3 +1,4 @@
+@props(['hasFooter' => true])
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -7,13 +8,17 @@
     <title>{{ config('app.name') }}</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-   
+
     <x-LaravelThemeCustomizer::theme-css />
 </head>
 
 <body class="font-['Cairo'] bg-color-dark-100 text-[var(--color-light-200)] leading-relaxed">
     <x-layouts.users.header />
-     {{ 
-        $slot
-     }}
-    <x-layouts.users.footer   />
+    {{ $slot }}
+    
+    @if ($hasFooter)
+        <x-layouts.users.footer />
+    @endif
+</body>
+
+</html>

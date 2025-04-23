@@ -22,7 +22,7 @@ class DreamController extends Controller
      */
     public function create()
     {
-        return  "VIEW CRETE NEW DARME PAGE";
+        return  view('dreams.create');
     }
 
     /**
@@ -35,12 +35,14 @@ class DreamController extends Controller
         $description = $request['description'] ;
         $amount = $request['amount'] ;
         $image_path = $request['image_path'] ;
+        $id_image_path = $request['id_image_path'] ;
 
         $dream = new Dream();
         $dream->full_name = $full_name;
         $dream->description = $description;
         $dream->amount = $amount;
         $dream->image_path = $image_path;
+        $dream->id_image_path = $id_image_path;
         if($dream->save()){
             session()->flash('message', 'Dream created successfully');
             // redirect()->back();
