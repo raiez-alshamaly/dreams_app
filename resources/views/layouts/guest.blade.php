@@ -16,9 +16,11 @@
 
         <!-- Styles -->
         @livewireStyles
+        <x-LaravelThemeCustomizer::theme-css />
+
     </head>
     <body>
-        <div class="font-sans text-gray-900 antialiased">
+        <div class="font-sans bg-dark-700 text-light-900 antialiased">
             {{ $slot }}
         </div>
 

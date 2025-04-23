@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('full_name');
             $table->string('description');
             $table->integer('amount');
-            $table->string('image_path')->nullable();
+            $table->string('image_path');
+            $table->string('id_image_path'); 
             $table->string('status')->default(DreamStatusEnum::PENDING->value);
             $table->timestamps();
             $table->softDeletes();

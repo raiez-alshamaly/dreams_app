@@ -18,6 +18,7 @@ class Dream extends Model
         'status',
         'amount',
         'description',
+        'id_image_path',
         'created_at',
         'updated_at',
         'deleted_at',
