@@ -16,7 +16,7 @@
 
        
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-color-neutral-700">
      
       <x-layouts.admin-header/>
        

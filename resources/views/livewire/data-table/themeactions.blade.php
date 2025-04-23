@@ -4,7 +4,7 @@
    @if(!$isActive)
         <button
             wire:click="{{ $active }}"
-            class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600"
+            class="bg-color-success-500 text-color-light-100 px-2 py-1 rounded hover:bg-color-success-400"
             
         >
             Active 
@@ -16,7 +16,7 @@
 
 <button
     wire:click="{{ $delete }}"
-    class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">
+    class="bg-color-warning-500 text-color-light-100 px-2 py-1 rounded hover:bg-color-warning-400">
     Delete
 </button>
  

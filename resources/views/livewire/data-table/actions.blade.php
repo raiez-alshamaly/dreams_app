@@ -4,7 +4,7 @@
     @if($row->trashed())
         <button
             wire:click="{{ $restoreAction }}"
-            class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600"
+            class="bg-color-primary-500 text-[var(--color-light-100)] px-2 py-1 rounded hover:bg-color-primary-600"
             onclick="return confirm('Are you sure you want to restore this item?')"
         >
             Restore
@@ -12,7 +12,7 @@
     @else
         <button
             wire:click="{{ $deleteAction }}"
-            class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
+            class="bg-color-warning-500 text-[var(--color-light-100)] px-2 py-1 rounded hover:bg-color-warning-600"
             onclick="return confirm('Are you sure you want to delete this item?')"
         >
             Delete
@@ -20,7 +20,7 @@
         @if($row->status !== 'approve')
             <button
                 wire:click="{{ $acceptAction }}"
-                class="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600"
+                class="bg-color-success-500 text-[var(--color-light-100)] px-2 py-1 rounded hover:bg-color-success-600"
             >
                 Accept
             </button>
