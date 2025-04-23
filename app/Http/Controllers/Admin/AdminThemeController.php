@@ -22,4 +22,8 @@ class AdminThemeController extends Controller
     public function update(Request $request){
         return "update theme";
     }
+
+    public function create(){
+        return view("admin.themes.create");
+    }
 }

@@ -39,6 +39,7 @@
     </div>
     <form wire:submit.prevent="save" class="mt-5" method="POST">
         @csrf
+       
         <input type="hidden" name="colors" wire:model="colors">
         <button type="submit" class="px-5 py-2.5 border-none rounded font-medium bg-color-primary-200 text-color-light-100 cursor-pointer">Save Colors</button>
     </form>

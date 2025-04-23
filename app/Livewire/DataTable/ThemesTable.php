@@ -29,7 +29,15 @@ class ThemesTable extends DataTableComponent
             }
             return [];
         });
+        // $this->setActionsInToolbar();
+        $this->setConfigurableAreas([
+            'toolbar-right-start' => ['livewire.data-table.toolbar-btn' , [
+                'wire' => "wire:click=add()",
+                'lable' => "إضافة ثيم"
+            ]],
+        ]);
     }
+
 
     public function columns(): array
     {
@@ -44,7 +52,7 @@ class ThemesTable extends DataTableComponent
                 ->label(fn($row) => view('livewire.data-table.themeactions', [
                     'row' => $row,
                     'isActive' => (bool) $row->is_active,
-                    'isGlobal' => (bool) $row->is_global,
+                    
                     'active' => "active($row->id)",
 
                     "delete" => "delete($row->id)"
@@ -77,5 +85,9 @@ class ThemesTable extends DataTableComponent
     public function viewItem($id)
     {
         redirect(route("admin.themes.show", ['id' => $id]));
+    }
+
+    public function add(){
+        redirect()->route('admin.themes.create');
     }
 }
