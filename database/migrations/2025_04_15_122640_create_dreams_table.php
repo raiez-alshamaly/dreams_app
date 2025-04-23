@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('amount');
             $table->string('image_path');
             $table->string('id_image_path'); 
+            $table->string('phone');
             $table->string('status')->default(DreamStatusEnum::PENDING->value);
             $table->timestamps();
             $table->softDeletes();
