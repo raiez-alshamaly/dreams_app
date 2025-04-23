@@ -1,23 +1,10 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ config('app.name') }}</title>
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-   
-    <x-LaravelThemeCustomizer::theme-css />
-</head>
-
-<body class="font-['Cairo'] bg-color-dark-100 text-[var(--color-light-200)] leading-relaxed">
     
     <nav class="not-blur bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-primary-600)] shadow-md py-1 px-10">
         <div class="not-blur  mx-auto flex items-center justify-between md:justify-normal">
             <!-- اسم التطبيق -->
             <a class="text-xl font-bold text-[var(--color-light-200)] flex items-center gap-2 shrink-0" href="/">
-                <i class="fas fa-star-half-alt"></i>
+                <x-application-logo />
                 <span>{{ config('app.name') }}</span>
             </a>
 
@@ -49,7 +36,7 @@
                     @endauth
                 </ul>
                 <!-- زر إرسال الحلم -->
-                <a href="/dream/create" 
+                <a href="{{ route('dreams.create') }}" 
                    class="text-sm font-semibold px-3 py-2 bg-[var(--color-secondary-50)] border border-[var(--color-secondary-100)] text-[var(--color-light-50)] rounded hover:bg-[var(--color-secondary-100)] hover:text-[var(--color-light-100)] transition-colors">
                     <i class="fas fa-plus-circle me-1"></i> أرسل حلمك
                 </a>
@@ -90,10 +77,15 @@
                     </li>
                 @endauth
                 <li>
-                    <a href="/dream/create" 
-                       class="block w-full text-center text-sm font-semibold px-3 py-2 bg-[var(--light-secondary)] border border-[var(--secondary-color)] text-[var(--text-dark)] rounded hover:bg-[var(--secondary-color)] hover:text-[var(--color-light-200)] transition-colors">
+                    <x-widgets.buttons.primary style="full" >
+                        <a href="{{ route('dreams.create') }}" >
+                         <i class="fas fa-plus-circle me-1"></i> أرسل حلمك
+                     </a>
+                    </x-widgets.buttons.primary>
+                    {{-- <a href="{{ route('dreams.create') }}" 
+                       class="block w-full text-center text-sm font-semibold px-3 py-2  border border-[var(--secondary-color)] text-[var(--text-dark)] rounded hover:bg-[var(--secondary-color)] hover:text-[var(--color-light-200)] transition-colors">
                         <i class="fas fa-plus-circle me-1"></i> أرسل حلمك
-                    </a>
+                    </a> --}}
                 </li>
             </ul>
         </div>

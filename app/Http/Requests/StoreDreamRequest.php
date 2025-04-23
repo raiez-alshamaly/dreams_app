@@ -25,7 +25,8 @@ class StoreDreamRequest extends FormRequest
             'full_name' =>['required'],
             'description' =>['required'],
             'amount' =>['required'],
-            // 'image_path' => ['required'],
+            'image_path' => ['required'],
+            'id_image_path' => ['required'],
         ];
     }
 }
