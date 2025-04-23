@@ -1,9 +1,5 @@
 <x-layouts.admin >
     <x-slot:title> Admin Page </x-slot:title>
-        <!-- Content -->
-       
-           themes
-        
-          <!-- End Content -->
+    <livewire:data-table.themes-table />
     
     </x-layouts.admin>

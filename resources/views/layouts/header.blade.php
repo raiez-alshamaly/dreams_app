@@ -7,14 +7,16 @@
     <title>{{ config('app.name') }}</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+   
     <x-LaravelThemeCustomizer::theme-css />
 </head>
 
-<body class="font-['Cairo'] bg-[var(--dark-background)] text-[var(--text-light)] leading-relaxed">
-    <nav class="not-blur bg-gradient-to-r from-[var(--dark-background)] to-[var(--primary-color)] shadow-md py-1 px-10">
+<body class="font-['Cairo'] bg-color-dark-100 text-[var(--color-light-200)] leading-relaxed">
+    
+    <nav class="not-blur bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-primary-600)] shadow-md py-1 px-10">
         <div class="not-blur  mx-auto flex items-center justify-between md:justify-normal">
             <!-- اسم التطبيق -->
-            <a class="text-xl font-bold text-[var(--text-light)] flex items-center gap-2 shrink-0" href="/">
+            <a class="text-xl font-bold text-[var(--color-light-200)] flex items-center gap-2 shrink-0" href="/">
                 <i class="fas fa-star-half-alt"></i>
                 <span>{{ config('app.name') }}</span>
             </a>
@@ -23,14 +25,14 @@
             <div class="hidden md:flex items-center justify-between flex-grow mr-4">
                 <ul class="flex items-center gap-4">
                     <li>
-                        <a class="text-sm font-medium text-[var(--text-light)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--accent-color)] transition-colors" 
+                        <a class="text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--color-light-100)] transition-colors" 
                            aria-current="page" href="{{ Route('start') }}">
                             <i class="fas fa-home me-1"></i> الرئيسية
                         </a>
                     </li>
                     @auth
                         <li>
-                            <a class="text-sm font-medium text-[var(--text-light)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--accent-color)] transition-colors" 
+                            <a class="text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var((--color-light-100)] transition-colors" 
                                href="{{ Route('dashboard') }}">
                                 <i class="fas fa-tachometer-alt me-1"></i> لوحة التحكم
                             </a>
@@ -38,7 +40,7 @@
                         <li>
                             <form action="{{ Route('logout') }}" method="POST" >
                                 @csrf
-                                <button type="submit" class="text-sm font-medium text-[var(--text-light)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--accent-color)] transition-colors">
+                                <button type="submit" class="text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var((--color-light-100)] transition-colors">
                                     <i class="fas fa-sign-out-alt me-1"></i> تسجيل الخروج
                                 </button>
     
@@ -48,7 +50,7 @@
                 </ul>
                 <!-- زر إرسال الحلم -->
                 <a href="/dream/create" 
-                   class="text-sm font-semibold px-3 py-2 bg-[var(--light-secondary)] border border-[var(--secondary-color)] text-[var(--text-dark)] rounded hover:bg-[var(--secondary-color)] hover:text-[var(--text-light)] transition-colors">
+                   class="text-sm font-semibold px-3 py-2 bg-[var(--color-secondary-50)] border border-[var(--color-secondary-100)] text-[var(--color-light-50)] rounded hover:bg-[var(--color-secondary-100)] hover:text-[var(--color-light-100)] transition-colors">
                     <i class="fas fa-plus-circle me-1"></i> أرسل حلمك
                 </a>
             </div>
@@ -68,20 +70,20 @@
         <div id="mobileMenu" class="hidden md:hidden mt-4 bg-[#2D3748] rounded-lg shadow-lg mx-2 p-4">
             <ul class="flex flex-col gap-2">
                 <li>
-                    <a class="block w-full text-sm font-medium text-[var(--text-light)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--accent-color)] transition-colors" 
+                    <a class="block w-full text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--color-light-100)] transition-colors" 
                        aria-current="page" href="{{ Route('start') }}">
                         <i class="fas fa-home me-1"></i> الرئيسية
                     </a>
                 </li>
                 @auth
                     <li>
-                        <a class="block w-full text-sm font-medium text-[var(--text-light)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--accent-color)] transition-colors" 
+                        <a class="block w-full text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--color-light-100)] transition-colors" 
                            href="{{ Route('dashboard') }}">
                             <i class="fas fa-tachometer-alt me-1"></i> لوحة التحكم
                         </a>
                     </li>
                     <li>
-                        <a class="block w-full text-sm font-medium text-[var(--text-light)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--accent-color)] transition-colors" 
+                        <a class="block w-full text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--color-light-100)] transition-colors" 
                            href="{{ Route('logout') }}">
                             <i class="fas fa-sign-out-alt me-1"></i> تسجيل الخروج
                         </a>
@@ -89,7 +91,7 @@
                 @endauth
                 <li>
                     <a href="/dream/create" 
-                       class="block w-full text-center text-sm font-semibold px-3 py-2 bg-[var(--light-secondary)] border border-[var(--secondary-color)] text-[var(--text-dark)] rounded hover:bg-[var(--secondary-color)] hover:text-[var(--text-light)] transition-colors">
+                       class="block w-full text-center text-sm font-semibold px-3 py-2 bg-[var(--light-secondary)] border border-[var(--secondary-color)] text-[var(--text-dark)] rounded hover:bg-[var(--secondary-color)] hover:text-[var(--color-light-200)] transition-colors">
                         <i class="fas fa-plus-circle me-1"></i> أرسل حلمك
                     </a>
                 </li>
@@ -108,6 +110,3 @@
             }
         });
     </script>
-</body>
-
-</html>

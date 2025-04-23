@@ -59,7 +59,7 @@
           <ul class="flex flex-col space-y-1">
             <x-layouts.sidebar-link-item  route="admin.index" label="Dashboard" />
             <x-layouts.sidebar-link-item  route="admin.dreams" label="Dreams" />
-            <x-layouts.sidebar-link-item  route="admin.themes" label="Themes" />
+            <x-layouts.sidebar-link-item  route="admin.themes.index" label="Themes" />
             <x-layouts.sidebar-link-item  route="admin.loader" label="Loader" />
         
           

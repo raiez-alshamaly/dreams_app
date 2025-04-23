@@ -17,10 +17,7 @@ class AdminPageController extends Controller
     {
         return view("admin.dreams");
     }
-    public function themes()
-    {
-        return view("admin.themes");
-    }
+  
     public function loader()
     {
         return view("admin.loader");

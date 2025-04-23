@@ -176,10 +176,7 @@ body {
         abba: inherit;
     }
 
-    .ticker-track.cloned {
-        animation-delay: 10s;
-        /* تأخير للنسخة المستنسخة */
-    }
+ 
 .ticker-container {
     height: 100%;
     width: calc(100% - 120px);

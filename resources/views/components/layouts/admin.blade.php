@@ -7,16 +7,17 @@
 
         <title>{{ config('app.name', 'Laravel') }} {{ $title ?  "- $title " : " " }} </title>
 
-        <!-- Fonts -->
+      
       
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+        <x-LaravelThemeCustomizer::theme-css />
        
       
 
        
     </head>
     <body class="font-sans antialiased">
+     
       <x-layouts.admin-header/>
        
         <x-layouts.sidebar />

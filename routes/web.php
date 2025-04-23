@@ -71,5 +71,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
 
 
-
+require_once __DIR__ .'/web/theme.php';
+require_once __DIR__ .'/web/admin.php';
 require_once __DIR__ . '/web/test.php';
+

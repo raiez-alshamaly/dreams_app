@@ -3,7 +3,7 @@
 @source "../views";
 
 @source '../../vendor/rappasoft/laravel-livewire-tables/resources/views/*.blade.php';
-
+@source "../../vendor/masmerise/livewire-toaster/resources/views/*.blade.php";
 
 /* Preline UI */
 @import "../../node_modules/preline/variants.css";
