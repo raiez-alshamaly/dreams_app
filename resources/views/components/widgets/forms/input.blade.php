@@ -1,6 +1,6 @@
 @props(['label', 'id', 'type' => 'text' , 'divstyle' => ''])
 <div class=" mb-4 {{$divstyle}} ">
-    <label for="{{ $id }}" class="block mb-2 text-sm font-medium text-gray-500 dark:text-white">
+    <label for="{{ $id }}" class="block mb-2 text-sm font-medium text-color-light-200 ">
         {{ $label }}
     </label>
 

@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreDreamRequest;
 use App\Http\Requests\UpdateDreamRequest;
 use App\Models\Dream;
+use App\Traits\UploadImageDreamsTraits;
+use Exception;
+use Illuminate\Support\Facades\DB;
 
 class DreamController extends Controller
 {
-
+    use UploadImageDreamsTraits;
     /**
      * Display a listing of the resource.
      */
@@ -30,29 +33,55 @@ class DreamController extends Controller
      */
     public function store(StoreDreamRequest $request)
     {
-        $request->validated();
-        $full_name = $request['full_name'] ;
-        $description = $request['description'] ;
-        $amount = $request['amount'] ;
-        $image_path = $request['image_path'] ;
-        $id_image_path = $request['id_image_path'] ;
+        $validated = $request->validated();
 
-        $dream = new Dream();
-        $dream->full_name = $full_name;
-        $dream->description = $description;
-        $dream->amount = $amount;
-        $dream->image_path = $image_path;
-        $dream->id_image_path = $id_image_path;
-        if($dream->save()){
-            session()->flash('message', 'Dream created successfully');
-            // redirect()->back();
-        }else{
-            session()->flash('error', 'Error creating dream');
-            // redirect()->back();
+        DB::beginTransaction();
+
+        try {
+
+
+            $saved_image  = [];
+            $image = $this->uploadImageDreams($request, "image_path");
+            if (isset($image['error'])) {
+                throw new Exception($image['error']);
+            } else {
+                $saved_image[] = $image;
+                $id_image =  $this->uploadImageDreams($request, 'id_image_path');
+                if (isset($id_image['error'])) {
+                    $saved_image[] = $id_image;
+                    throw new Exception($id_image['error']);
+
+                   
+                } else {
+                    $saved_image[] = $id_image;
+                    $dream = new Dream([
+                        'full_name'     => $validated['full_name'],
+                        'description'   => $validated['description'],
+                        'amount'        => $validated['amount'],
+                        'phone'         => $validated['phone'],
+                        'image_path'    => $image['path'],
+                        'id_image_path' => $id_image['path']
+                    ]);
+                    $dream->saveOrFail(); // Throws exception if save fails
+                    DB::commit();
+                    session()->flash('message', 'Dream created successfully');
+                   
+                }
+            }
+        } catch (\Throwable $e) {
+            DB::rollBack();
+            // Clean up any uploaded files if needed
+
+            foreach ($saved_image as $image) {
+                if (isset($image['path']) && file_exists($image['path'])) {
+                    unlink($image['path']);
+                }
+            }
+            session()->flash('error', 'Error: ' . $e->getMessage());
+            dd($e->getMessage());
         }
-
-
-        return "STORE NEW DRAME AND THEN RETURN RESULT TO CREATE PAGE OR USER";
+        
+        return redirect()->route('dreams.create');
     }
 
     /**

@@ -20,7 +20,7 @@
                     @auth
                         <li>
                             <a class="text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var((--color-light-100)] transition-colors" 
-                               href="{{ Route('dashboard') }}">
+                               href="{{ Route('admin.index') }}">
                                 <i class="fas fa-tachometer-alt me-1"></i> لوحة التحكم
                             </a>
                         </li>
@@ -65,7 +65,7 @@
                 @auth
                     <li>
                         <a class="block w-full text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--color-light-100)] transition-colors" 
-                           href="{{ Route('dashboard') }}">
+                           href="{{ Route('admin.index') }}">
                             <i class="fas fa-tachometer-alt me-1"></i> لوحة التحكم
                         </a>
                     </li>
