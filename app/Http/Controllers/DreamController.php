@@ -89,7 +89,8 @@ class DreamController extends Controller
      */
     public function show(Dream $dream)
     {
-        return "VIEW WITH DREAM INFORMATION";
+    
+        return view('dreams.show' , ['dream' => $dream]);
     }
 
     /**
