@@ -21,7 +21,7 @@
 
 
                 <p class="mt-1 text-sm text-gray-600"> {{ $step->description }} </p>
-               
+
                 @if (count($step->media) > 0)
                     <!-- Slider -->
                     <div data-hs-carousel='{
@@ -34,17 +34,20 @@
                             <div
                                 class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
                                 @forelse ($step->media as $item)
-                                  
-                                    @if ($item->getType() == 'image')
-                                        <div class="hs-carousel-slide">
-                                            <div class="flex justify-center h-full  ">
+                                    <div class="hs-carousel-slide">
+                                        <div class="flex justify-center h-full  ">
+                                            @if ($item->getType() == 'image')
                                                 <img class="  max-w-full h-auto   object-cover rounded-s-lg"
                                                     src="{{ asset('storage/' . $item->path) }}" alt="step-media">
-                                            </div>
+                                            @elseif ($item->getType() == 'video')
+                                                <video class="max-w-full h-auto object-cover rounded-s-lg"
+                                                    src="{{ asset('storage/' . $item->path) }}" controls
+                                                    alt="step-media"></video>
+                                            @endif
+
                                         </div>
-                                    @elseif ($item->getType() == 'video')
-                                        {{-- video show --}}
-                                    @endif
+                                    </div>
+
                                 @empty
                                 @endforelse
 

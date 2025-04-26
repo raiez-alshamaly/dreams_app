@@ -24,7 +24,7 @@ class AdminEditDreamTimeLine extends Component
         $this->description = $this->step->description;
         $this->saved_media = $this->step->media ?? [];
     }
-    public function updated()
+    public function update()
     {
         $this->validate([
             'description' => 'required',
