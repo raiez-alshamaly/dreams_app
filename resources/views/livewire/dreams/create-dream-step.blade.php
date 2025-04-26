@@ -2,7 +2,7 @@
     class="w-full   shadow-2xl p-6 rounded-2xl bg-[var(--color-dark-200)]">
     @csrf
     <div class="text-center text-color-light-200 text-4xl text-bload p-2 m-4 mb-8 ">
-        {{-- title --}}
+        إضافة خطوة جديدة
     </div>
 
     <x-widgets.forms.input label="الوصف" id="description" wire:model='description' />

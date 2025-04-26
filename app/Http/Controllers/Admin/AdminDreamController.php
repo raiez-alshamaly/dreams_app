@@ -111,6 +111,10 @@ class AdminDreamController extends  Controller
     }
 
     public function show($id){
-        return view('admin.dreams.show' , ['id' => $id]);
+        return view('admin.dreams.show' , ['dream' => Dream::find($id) ]);
+    }
+
+    public function editStep($id){
+        return view('admin.dreams.steps.edit' , ['id'=> $id ]);
     }
 }

@@ -3,11 +3,10 @@
 namespace App\Livewire\Dreams;
 
 use App\Models\DreamStep;
-use App\Models\StepMedia;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
-class DreamTimeLine extends Component
+class AdminDreamTimeLine extends Component
 {
     public $dream;
     public $steps ;
@@ -17,7 +16,15 @@ class DreamTimeLine extends Component
      
     }
 
-   
+    public function delete($id) {
+        $step = DreamStep::find($id);
+        $step->delete();
+        $this->dispatch('dream-step-changed');
+    }
+    public function edit($id){
+       
+        redirect()->route('admin.dreams.steps.edit', $id);
+    }
     #[On('dream-step-changed')]
     public function stepsUpdated(){
         $this->steps = DreamStep::where('dream_id' , $this->dream)->get();
@@ -25,6 +32,6 @@ class DreamTimeLine extends Component
     }
     public function render()
     {
-        return view('livewire.dreams.dream-time-line');
+        return view('livewire.dreams.admin-dream-time-line');
     }
 }
