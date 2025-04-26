@@ -109,4 +109,8 @@ class AdminDreamController extends  Controller
         }
         return redirect()->back();
     }
+
+    public function show($id){
+        return view('admin.dreams.show' , ['id' => $id]);
+    }
 }

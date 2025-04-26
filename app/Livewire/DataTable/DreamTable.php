@@ -138,7 +138,7 @@ class DreamTable extends DataTableComponent
     #[On('viewItem')]
     public function viewItem($id): void
     {
-        redirect()->route('dreams.show', $id);
+        redirect()->route('admin.dreams.show', $id);
     }
 
     public function randomSelect(): void
@@ -146,7 +146,7 @@ class DreamTable extends DataTableComponent
         $query = $this->getBuilder();
         $randomDream = $query->inRandomOrder()->first();
         if ($randomDream) {
-            redirect()->route('dreams.show', $randomDream->id);
+            redirect()->route('admin.dreams.show', $randomDream->id);
         } else {
             session()->flash('message', 'No items found after filtering.');
         }
