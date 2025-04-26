@@ -54,8 +54,8 @@ class AdminEditDreamTimeLine extends Component
 
 
 
-            $this->reset(['description', 'media']); // Clear form after save
-            $this->dispatch('dream-step-changed');
+            $this->mount();
+            $this->render();
         } catch (\Throwable $th) {
             dd($th->getMessage());
         }
