@@ -55,21 +55,19 @@ Route::group(['as' => 'dreams.'], function () {
 
 
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::get('/', [AdminPageController::class, 'dashboard'])->name('index');
-    Route::get('/dreams', [AdminPageController::class, 'dreams'])->name('dreams');
-    Route::get('/themes', [AdminPageController::class, 'themes'])->name('themes');
-    Route::get('/loader', [AdminPageController::class, 'loader'])->name('loader');
-    // Route::post('fulfill_dream', [DashboardController::class, 'fulfill_dream']);
-    // Route::get('random', [DashboardController::class, 'random_dream']);
-    // Route::post('dream/delete', [DreamController::class, 'delete_dream']);
-    // Route::post('dream/accept', [DreamController::class, 'accept']);
-});
+// Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+//     Route::get('/', [AdminPageController::class, 'dashboard'])->name('index');
+//     Route::get('/dreams', [AdminPageController::class, 'dreams'])->name('dreams');
+//     Route::get('/themes', [AdminPageController::class, 'themes'])->name('themes');
+//     // Route::get('/loader', [AdminPageController::class, 'loader'])->name('loader');
+  
+// });
 
 
 
 
 require_once __DIR__ .'/web/theme.php';
 require_once __DIR__ .'/web/admin.php';
+require_once __DIR__ .'/web/laoder.php';
 require_once __DIR__ . '/web/test.php';
 

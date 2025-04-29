@@ -13,9 +13,12 @@
 </head>
 
 <body class="font-['Cairo'] bg-color-dark-100 text-[var(--color-light-200)] leading-relaxed">
+    @if (isset($isEnabled) && $isEnabled)
+        {!! $loaderHtml !!}
+    @endif
     <x-layouts.users.header />
     {{ $slot }}
-    
+
     @if ($hasFooter)
         <x-layouts.users.footer />
     @endif
