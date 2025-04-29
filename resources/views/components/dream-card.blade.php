@@ -6,7 +6,7 @@
     @if($dream->status == 'approve') 
     <span class="flex absolute  top-2 right-2 animate-bounce mt-4 -me-4">
         <span class="animate-ping absolute inline-flex size-full rounded-sm bg-amber-200 opacity-75"></span>
-        <span class="relative inline-flex text-xs bg-amber-300 text-white rounded-sm py-0.5 px-1.5">
+        <span class="relative inline-flex text-xs bg-amber-300 text-color-light-200 rounded-sm py-0.5 px-1.5">
             <i class="fas fa-star-half-alt  text-lg "></i>
         </span>
       </span>
@@ -22,11 +22,11 @@
 
         <div class="dream-image  w-full h-full bg-cover bg-center rounded shadow">
             <img src="{{ asset('storage/' . $dream->image_path) }}" alt="{{ $dream->full_name }}">
-            {{-- style="background-image: url('{{ config('app.app_url') . '/storage/uploads/' . $dream->image_path }}')"> --}}
+            
            
         </div>
     @else
-        <div class="dream-image w-full h-full bg-gray-500 rounded shadow flex items-center justify-center text-gray-300">
+        <div class="dream-image w-full h-full bg-gray-500 rounded shadow flex items-center justify-center text-color-light-200">
             لا توجد صورة
         </div>
     @endif

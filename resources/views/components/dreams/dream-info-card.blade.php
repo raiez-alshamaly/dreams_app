@@ -7,13 +7,13 @@
         </figure>
         <div class="space-y-5 md:space-y-8 bg-white shadow rounded-lg p-6">
             <h2 class="text-2xl font-bold md:text-3xl">{{ $dream->full_name }}</h2>
-            <p class="text-lg text-gray-800">{{ $dream->description }}</p>
-            <p class="text-lg text-gray-800">Amount: {{ $dream->amount }}</p>
+            <p class="text-lg text-color-light-200">{{ $dream->description }}</p>
+            <p class="text-lg text-color-light-200">Amount: {{ $dream->amount }}</p>
             @if (isset($dream->budget))
-                <p class="text-lg text-gray-800">Budget: {{ $dream->budget }}</p>
+                <p class="text-lg text-color-light-200">Budget: {{ $dream->budget }}</p>
             @endif
             @if (isset($dream->status))
-                <p class="text-lg text-gray-800">Status: {{ $dream->status }}</p>
+                <p class="text-lg text-color-light-200">Status: {{ $dream->status }}</p>
             @endif
         </div>
        

@@ -1,6 +1,6 @@
 
     
-    <nav class="not-blur bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-primary-600)] shadow-md py-1 px-10">
+    <nav class="not-blur bg-[linear-gradient(to_right,var(--color-primary-600),var(--color-secondary-400))] shadow-md py-1 px-10">
         <div class="not-blur  mx-auto flex items-center justify-between md:justify-normal">
             <!-- اسم التطبيق -->
             <a class="text-xl font-bold text-[var(--color-light-200)] flex items-center gap-2 shrink-0" href="/">
@@ -43,7 +43,7 @@
             </div>
 
             <!-- زر الـ toggle للشاشات الصغيرة -->
-            <button class="md:hidden p-2 text-sm border-0 text-white hover:bg-white/10 rounded transition-colors" 
+            <button class="md:hidden p-2 text-sm border-0 text-[var(--color-light-200)] hover:bg-white/10 rounded transition-colors" 
                 type="button" 
                 onclick="document.getElementById('mobileMenu').classList.toggle('hidden')"
                 aria-controls="mobileMenu" 
@@ -82,10 +82,7 @@
                          <i class="fas fa-plus-circle me-1"></i> أرسل حلمك
                      </a>
                     </x-widgets.buttons.primary>
-                    {{-- <a href="{{ route('dreams.create') }}" 
-                       class="block w-full text-center text-sm font-semibold px-3 py-2  border border-[var(--secondary-color)] text-[var(--text-dark)] rounded hover:bg-[var(--secondary-color)] hover:text-[var(--color-light-200)] transition-colors">
-                        <i class="fas fa-plus-circle me-1"></i> أرسل حلمك
-                    </a> --}}
+                   
                 </li>
             </ul>
         </div>

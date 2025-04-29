@@ -12,13 +12,13 @@
             </div>
          
             <div class="grow pb-8 group-last:pb-0">
-                <h3 class="mb-1 text-xs text-gray-600">
+                <h3 class="mb-1 text-xs text-color-light-200">
                     {{ $step->created_at }}
                 </h3>
 
 
 
-                <p class="mt-1 text-sm text-gray-600"> {{ $step->description }} </p>
+                <p class="mt-1 text-sm text-color-light-200"> {{ $step->description }} </p>
 
                 @if (count($step->media) > 0)
                   

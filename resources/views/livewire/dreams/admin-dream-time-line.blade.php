@@ -17,13 +17,13 @@
             <div class="grow pb-8 group-last:pb-0">
                <div class="flex flex-row justify-between ">
                 <div>
-                    <h3 class="mb-1 text-xs text-gray-600">
+                    <h3 class="mb-1 text-xs text-color-light-200">
                         {{ $step->created_at }}
                     </h3>
     
     
     
-                    <p class="mt-1 text-sm text-gray-600"> {{ $step->description }} </p>
+                    <p class="mt-1 text-sm text-color-light-200"> {{ $step->description }} </p>
                 </div>
                 <div>
                     <button type="button" wire:click='delete({{ $step->id }})'>
@@ -63,7 +63,7 @@
                         </div>
 
                         <button type="button"
-                            class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-11.5 h-full text-gray-800 hover:bg-gray-800/10 focus:outline-hidden focus:bg-gray-800/10 rounded-s-lg">
+                            class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-11.5 h-full text-color-light-200 hover:bg-gray-800/10 focus:outline-hidden focus:bg-gray-800/10 rounded-s-lg">
                             <span class="text-2xl" aria-hidden="true">
                                 <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24"
                                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -74,7 +74,7 @@
                             <span class="sr-only">Previous</span>
                         </button>
                         <button type="button"
-                            class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-11.5 h-full text-gray-800 hover:bg-gray-800/10 focus:outline-hidden focus:bg-gray-800/10 rounded-e-lg">
+                            class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-11.5 h-full text-color-light-200 hover:bg-gray-800/10 focus:outline-hidden focus:bg-gray-800/10 rounded-e-lg">
                             <span class="sr-only">Next</span>
                             <span class="text-2xl" aria-hidden="true">
                                 <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24"

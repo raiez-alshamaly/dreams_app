@@ -46,7 +46,7 @@ Route::prefix($prefix)
 
 
 
-Route::group(["prefix" => "admin", "as" => 'admin.themes.'], function () {
+Route::group(["prefix" => "admin", "as" => 'admin.themes.' , 'middleware' => ['auth']], function () {
     Route::get('/themes', [AdminThemeController::class, 'index'])->name('index');
     Route::get('/themes/create' , [AdminThemeController::class , 'create'])->name('create');
     Route::get('/themes/{id}', [AdminThemeController::class, 'show'])->name('show');

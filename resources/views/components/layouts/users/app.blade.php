@@ -12,7 +12,7 @@
     <x-LaravelThemeCustomizer::theme-css />
 </head>
 
-<body class="font-['Cairo'] bg-color-dark-100 text-[var(--color-light-200)] leading-relaxed">
+<body class="font-['Cairo'] bg-color-neutral-700 text-[var(--color-light-200)] leading-relaxed">
     @if (isset($isEnabled) && $isEnabled)
         {!! $loaderHtml !!}
     @endif

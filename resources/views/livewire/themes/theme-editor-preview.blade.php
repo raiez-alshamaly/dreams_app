@@ -46,8 +46,8 @@
              colorShadows = event.detail.colorShadows;
          });
      ">
-    <main class="font-['Cairo'] bg-[var(--preview-color-dark-800)]  leading-relaxed"  >
-        <nav class="not-blur bg-[linear-gradient(to_right,var(--preview-color-primary-600),var(--preview-color-primary-400))] shadow-md py-1 px-10">
+    <main class="font-['Cairo'] bg-[var(--preview-color-neutral-800)]  leading-relaxed"  >
+        <nav class="not-blur bg-[linear-gradient(to_right,var(--preview-color-primary-600),var(--preview-color-secondary-400))] shadow-md py-1 px-10">
             <div class="not-blur  mx-auto flex items-center justify-between md:justify-normal">
                 <!-- اسم التطبيق -->
                 <a class="text-xl font-bold text-[var(--preview-light)] flex items-center gap-2 shrink-0" href="/">
@@ -60,14 +60,14 @@
                     <ul class="flex items-center gap-4">
                         <li>
                             <a class="text-sm font-medium text-[var(--preview-color-light-100)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--preview-color-light-50)] transition-colors" 
-                               aria-current="page" href="{{ Route('start') }}">
+                               aria-current="page" href="">
                                 <i class="fas fa-home me-1"></i> الرئيسية
                             </a>
                         </li>
                       
                     </ul>
                     <!-- زر إرسال الحلم -->
-                    <a href="/dream/create" 
+                    <a href="" 
                        class="text-sm font-semibold px-3 py-2 bg-[var(--preview-color-secondary-600)] border border-[var(--preview-color-secondary-600)] text-[var(--preview-color-light-100)] rounded hover:bg-[var(--preview-color-secondary-500)] hover:text-[var(--preview-color-light-50)] transition-colors">
                         <i class="fas fa-plus-circle me-1"></i> أرسل حلمك
                     </a>

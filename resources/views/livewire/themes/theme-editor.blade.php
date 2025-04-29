@@ -21,7 +21,7 @@
             <input type="color" id="success" wire:model.live="colors.success" class="w-full h-10 p-0 border border-gray-300 rounded cursor-pointer">
         </div>
         <div class="color-picker flex flex-col gap-2">
-            <label for="highlight" class="font-medium text-[var(--color-light-100)]">Highlight Color</label>
+            <label for="highlight" class="font-medium text-[var(--color-light-100)]">Danger Color</label>
             <input type="color" id="highlight" wire:model.live="colors.highlight" class="w-full h-10 p-0 border border-gray-300 rounded cursor-pointer">
         </div>
         <div class="color-picker flex flex-col gap-2">
@@ -33,7 +33,7 @@
             <input type="color" id="neutral" wire:model.live="colors.neutral" class="w-full h-10 p-0 border border-gray-300 rounded cursor-pointer">
         </div>
         <div class="color-picker flex flex-col gap-2">
-            <label for="light" class="font-medium text-[var(--color-light-100)]">Light Color</label>
+            <label for="light" class="font-medium text-[var(--color-light-100)]">Text Color</label>
             <input type="color" id="light" wire:model.live="colors.light" class="w-full h-10 p-0 border border-gray-300 rounded cursor-pointer">
         </div>
     </div>

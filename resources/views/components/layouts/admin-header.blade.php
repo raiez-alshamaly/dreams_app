@@ -13,7 +13,7 @@
                     
             
             
-                    <button type="button" class="p-2 bg-red-600 relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent text-gray-800 hover:bg-red-100 focus:outline-hidden focus:bg-red-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-red-700 dark:focus:bg-red-700">
+                    <button type="button" class="p-2 bg-red-600 relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-md border border-transparent text-[var(--color-light-200)] hover:bg-red-100 focus:outline-hidden focus:bg-red-100 disabled:opacity-50 disabled:pointer-events-none ">
                         <i class="fa fa-sign-out" aria-hidden="true"></i>
                         <span>Logout</span>
                     </button>
