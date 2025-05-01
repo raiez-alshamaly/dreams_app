@@ -3,7 +3,7 @@
     <nav class="not-blur bg-[linear-gradient(to_right,var(--color-primary-600),var(--color-secondary-400))] shadow-md py-1 px-10">
         <div class="not-blur  mx-auto flex items-center justify-between md:justify-normal">
             <!-- اسم التطبيق -->
-            <a class="text-xl font-bold text-[var(--color-light-200)] flex items-center gap-2 shrink-0" href="/">
+            <a class="text-xl font-bold text-[var(--color-light-100)] flex items-center gap-2 shrink-0" href="/">
                 <x-application-logo />
                 <span>{{ config('app.name') }}</span>
             </a>
@@ -12,14 +12,14 @@
             <div class="hidden md:flex items-center justify-between flex-grow mr-4">
                 <ul class="flex items-center gap-4">
                     <li>
-                        <a class="text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--color-light-100)] transition-colors" 
+                        <a class="text-sm font-medium text-[var(--color-light-100)] px-3 py-2 rounded  hover:text-[var(--color-light-200)] transition-colors" 
                            aria-current="page" href="{{ Route('start') }}">
                             <i class="fas fa-home me-1"></i> الرئيسية
                         </a>
                     </li>
                     @auth
                         <li>
-                            <a class="text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var((--color-light-100)] transition-colors" 
+                            <a class="text-sm font-medium text-[var(--color-light-100)] px-3 py-2 rounded  hover:text-[var((--color-light-200)] transition-colors" 
                                href="{{ Route('admin.index') }}">
                                 <i class="fas fa-tachometer-alt me-1"></i> لوحة التحكم
                             </a>
@@ -27,7 +27,7 @@
                         <li>
                             <form action="{{ Route('logout') }}" method="POST" >
                                 @csrf
-                                <button type="submit" class="text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var((--color-light-100)] transition-colors">
+                                <button type="submit" class="text-sm font-medium text-[var(--color-light-100)] px-3 py-2 rounded  hover:text-[var((--color-light-200)] transition-colors">
                                     <i class="fas fa-sign-out-alt me-1"></i> تسجيل الخروج
                                 </button>
     
@@ -37,13 +37,13 @@
                 </ul>
                 <!-- زر إرسال الحلم -->
                 <a href="{{ route('dreams.create') }}" 
-                   class="text-sm font-semibold px-3 py-2 bg-[var(--color-secondary-50)] border border-[var(--color-secondary-100)] text-[var(--color-light-50)] rounded hover:bg-[var(--color-secondary-100)] hover:text-[var(--color-light-100)] transition-colors">
+                   class="text-sm font-semibold px-3 py-2 bg-[var(--color-secondary-50)] border border-[var(--color-secondary-100)] text-[var(--color-light-50)] rounded hover:bg-[var(--color-secondary-50)] hover:text-[var(--color-light-200)] transition-colors">
                     <i class="fas fa-plus-circle me-1"></i> أرسل حلمك
                 </a>
             </div>
 
             <!-- زر الـ toggle للشاشات الصغيرة -->
-            <button class="md:hidden p-2 text-sm border-0 text-[var(--color-light-200)] hover:bg-white/10 rounded transition-colors" 
+            <button class="md:hidden p-2 text-sm border-0 text-[var(--color-light-50)] hover:bg-[var(--color-light-100)] rounded transition-colors" 
                 type="button" 
                 onclick="document.getElementById('mobileMenu').classList.toggle('hidden')"
                 aria-controls="mobileMenu" 
@@ -54,23 +54,23 @@
         </div>
 
         <!-- قائمة التنقل للشاشات الصغيرة -->
-        <div id="mobileMenu" class="hidden md:hidden mt-4 bg-[#2D3748] rounded-lg shadow-lg mx-2 p-4">
+        <div id="mobileMenu" class="hidden md:hidden mt-4 bg-[linear-gradient(to_right,var(--color-primary-600),var(--color-secondary-400))]  rounded-lg shadow-lg mx-2 p-4">
             <ul class="flex flex-col gap-2">
                 <li>
-                    <a class="block w-full text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--color-light-100)] transition-colors" 
+                    <a class="block w-full text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded  hover:text-[var((--color-light-200)] transition-colors" 
                        aria-current="page" href="{{ Route('start') }}">
                         <i class="fas fa-home me-1"></i> الرئيسية
                     </a>
                 </li>
                 @auth
                     <li>
-                        <a class="block w-full text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--color-light-100)] transition-colors" 
+                        <a class="block w-full text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded  hover:text-[var((--color-light-200)] transition-colors" 
                            href="{{ Route('admin.index') }}">
                             <i class="fas fa-tachometer-alt me-1"></i> لوحة التحكم
                         </a>
                     </li>
                     <li>
-                        <a class="block w-full text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:bg-white/10 hover:text-[var(--color-light-100)] transition-colors" 
+                        <a class="block w-full text-sm font-medium text-[var(--color-light-200)] px-3 py-2 rounded hover:text-[var(--color-light-200)] transition-colors" 
                            href="{{ Route('logout') }}">
                             <i class="fas fa-sign-out-alt me-1"></i> تسجيل الخروج
                         </a>

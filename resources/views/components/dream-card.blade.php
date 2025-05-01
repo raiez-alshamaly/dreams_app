@@ -6,7 +6,7 @@
     @if($dream->status == 'approve') 
     <span class="flex absolute  top-2 right-2 animate-bounce mt-4 -me-4">
         <span class="animate-ping absolute inline-flex size-full rounded-sm bg-amber-200 opacity-75"></span>
-        <span class="relative inline-flex text-xs bg-amber-300 text-color-light-200 rounded-sm py-0.5 px-1.5">
+        <span class="relative inline-flex text-xs bg-amber-300 text-white rounded-sm py-0.5 px-1.5">
             <i class="fas fa-star-half-alt  text-lg "></i>
         </span>
       </span>

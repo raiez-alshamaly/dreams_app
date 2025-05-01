@@ -9,7 +9,7 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    {{-- <x-LaravelThemeCustomizer::theme-css /> --}}
+    <x-LaravelThemeCustomizer::theme-css />
 </head>
 
 <body class="">

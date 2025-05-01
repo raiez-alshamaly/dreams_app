@@ -1,14 +1,14 @@
 @props(['value' => null , 'style' => 'solid' ])
 @php 
    if($style == 'solid'){
-    $class = '';
+    $class = 'border border-[var(--color-primary)]';
    }else if ($style== 'full'){
-    $class = " bg-[var(--color-secondary)] ";
+    $class = " bg-[var(--color-primary-500)]  hover:bg-[var(--color-primary-400)] ";
    }else{
     $class = '' ;
    }
 @endphp
 
-<button {{  $attributes->merge([ 'class' => "block  text-center text-sm font-semibold px-3 py-2 bg-[var(--light-secondary)] border border-[var(--secondary-color)] text-[var(--color-light-200)] rounded hover:bg-[var(--secondary-color)] hover:text-[var(--color-light-200)] transition-colors $class" ])  }}>
+<button {{  $attributes->merge([ 'class' => "block  text-center text-sm font-semibold px-3 py-2   text-[var(--color-light-50)] rounded hover:text-[var(--color-light-100)] transition-colors $class" ])  }}>
     {{$value ?? $slot}}
 </button>

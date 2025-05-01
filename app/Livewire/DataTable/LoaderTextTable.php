@@ -5,7 +5,6 @@ namespace APp\Livewire\DataTable;
 use App\Models\Loader\LoaderText;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-use Mekad\LaravelThemeCustomizer\Repositories\ThemeRepository;
 use Rappasoft\LaravelLivewireTables\Views\Columns\BooleanColumn;
 
 
@@ -28,13 +27,7 @@ class LoaderTextTable extends DataTableComponent
             }
             return [];
         });
-        // $this->setActionsInToolbar();
-        // $this->setConfigurableAreas([
-        //     'toolbar-right-start' => ['livewire.data-table.toolbar-btn' , [
-        //         'wire' => "wire:click=add()",
-        //         'lable' => "إضافة ثيم"
-        //     ]],
-        // ]);
+       
     }
 
 
@@ -87,8 +80,5 @@ class LoaderTextTable extends DataTableComponent
         redirect(route("admin.loader.text.show", ['id' => $id]));
     }
 
-    // public function add()
-    // {
-    //     redirect()->route('admin.themes.create');
-    // }
+   
 }

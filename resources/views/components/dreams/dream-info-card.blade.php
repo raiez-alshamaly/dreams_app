@@ -5,7 +5,7 @@
             <img class="w-full object-cover rounded-xl" src="{{ asset('storage/' . $dream->image_path) }}"
                 alt="{{ $dream->full_name }}">
         </figure>
-        <div class="space-y-5 md:space-y-8 bg-white shadow rounded-lg p-6">
+        <div class="space-y-5 md:space-y-8 bg-color-neutral-600 shadow rounded-lg p-6">
             <h2 class="text-2xl font-bold md:text-3xl">{{ $dream->full_name }}</h2>
             <p class="text-lg text-color-light-200">{{ $dream->description }}</p>
             <p class="text-lg text-color-light-200">Amount: {{ $dream->amount }}</p>

@@ -1,22 +1,20 @@
 <div class="container mx-auto px-4 py-8">
-    <div class="flex justify-between items-center mb-6">
-        <h1 class="text-2xl font-bold text-gray-800 dark:text-white">إعدادات اللودر</h1>
-    </div>
+   
 
     <div id="success-alert" class="hidden mb-4 p-4 rounded-md bg-green-100 border border-green-400 text-green-700">
         تم حفظ الإعدادات بنجاح
     </div>
 
     <!-- بطاقة إعدادات اللودر -->
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-6 mb-8">
-        <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6">إعدادات عامة</h2>
+    <div class="bg-color-dark-50  rounded-lg shadow-lg border   p-6 mb-8">
+        <h2 class="text-xl font-bold text-color-light-50 mb-6">إعدادات عامة</h2>
 
         <div class="space-y-6">
             <!-- تفعيل اللودر -->
             <div class="flex items-center">
                 <div class="flex">
                     <input type="checkbox"
-                        class="shrink-0 mt-0.5 border-gray-200 rounded-sm text-blue-600 focus:ring-blue-500 checked:border-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+                        class="shrink-0 mt-0.5  rounded-sm text-color-light-50 focus:ring-blue-500 checked:border-blue-500 disabled:opacity-50 disabled:pointer-events-none"
                         id="isEnable" wire:model.defer='isEnable' value="{{ $isEnable }}"
                         @if ($isEnable > 0) checked @endif>
                     <label for="isEnable" class="text-sm text-gray-500 ms-3">مفعل </label>
@@ -45,7 +43,7 @@
                 <label for="animation" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">نوع
                     الأنيميشن</label>
                 <select id="animation" name="animation" wire:model='animation'
-                    class="w-full p-2 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
+                    class="w-full p-2   rounded-md shadow-sm bg-cyan-50">
                     <option value="slide">انزلاق</option>
                     <option value="fade">تلاشي</option>
                     <option value="bounce">ارتداد</option>
@@ -57,7 +55,7 @@
             <!-- تفعيل النص العشوائي -->
             <div class="flex items-center">
                 <input id="is_random_text" type="checkbox" name="is_random_text" value="1"
-                    class="h-4 w-4 text-blue-600 border-gray-300 dark:border-gray-600 focus:ring-blue-500"
+                    class="h-4 w-4 text-color-light-50   focus:ring-blue-500"
                     {{ $loader->is_random_text ? 'checked' : '' }}>
                 <label for="is_random_text" class="mr-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
                     عرض نص عشوائي
@@ -70,7 +68,7 @@
                 <div class="space-y-2">
                     <div class="flex items-center">
                         <input id="image_type_none" type="radio" name="type" value="empty" wire:model.live='type'
-                            class="h-4 w-4 text-blue-600 border-gray-300 dark:border-gray-600 focus:ring-blue-500"
+                            class="h-4 w-4 text-color-light-50   bg-cyan-50 focus:ring-blue-500"
                             {{ $type == 'empty' ? 'checked' : '' }}>
                         <label for="image_type_none"
                             class="mr-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -79,7 +77,7 @@
                     </div>
                     <div class="flex items-center">
                         <input id="image_type_image" type="radio" name="type" value="image" wire:model.live='type'
-                            class="h-4 w-4 text-blue-600 border-gray-300 dark:border-gray-600 focus:ring-blue-500"
+                            class="h-4 w-4 text-color-light-50  bg-cyan-50 focus:ring-blue-500"
                             {{ $type == 'image' ? 'checked' : '' }}>
                         <label for="image_type_image"
                             class="mr-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -88,7 +86,7 @@
                     </div>
                     <div class="flex items-center">
                         <input id="image_type_video" type="radio" name="type" value="video" wire:model.live='type'
-                            class="h-4 w-4 text-blue-600 border-gray-300 dark:border-gray-600 focus:ring-blue-500"
+                            class="h-4 w-4 text-color-light-50 bg-cyan-50  focus:ring-blue-500"
                             {{ $type == 'video' ? 'checked' : '' }}>
                         <label for="image_type_video"
                             class="mr-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -143,12 +141,11 @@
                 حفظ الإعدادات
             </button>
         </div>
-    </div>
 
-    <!-- بطاقة نصوص اللودر العشوائية -->
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4">
+          <!-- بطاقة نصوص اللودر العشوائية -->
+    <div class="mt-6  p-4">
         <div class="flex justify-between items-center mb-2">
-            <h2 class="text-xl font-bold text-gray-800 dark:text-white">نصوص اللودر</h2>
+            <h2 class="text-xl font-bold text-color-light-50">نصوص اللودر</h2>
             <a href= "{{ route('admin.loader.text.create') }}"
                 class="px-3 py-1 bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
                 إضافة نص جديد
@@ -158,4 +155,7 @@
         <livewire:data-table.loader-text-table>
 
     </div>
+    </div>
+
+  
 </div>

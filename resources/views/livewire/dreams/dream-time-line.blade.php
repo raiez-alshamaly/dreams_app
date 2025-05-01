@@ -2,23 +2,23 @@
 <div>
 
     @forelse ($steps as $step)
-        <div class="group relative flex gap-x-5">
+        <div class="group relative flex felx-col gap-x-5 ">
           
             <div
                 class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200">
                 <div class="relative z-10 size-6 flex justify-center items-center">
-                    <i class="fas fa-star-half-alt"></i>
+                    <i class="fas fa-star-half-alt text-color-light-50"></i>
                 </div>
             </div>
          
             <div class="grow pb-8 group-last:pb-0">
-                <h3 class="mb-1 text-xs text-color-light-200">
+                <h3 class="mb-1 text-xs text-color-light-50">
                     {{ $step->created_at }}
                 </h3>
 
 
 
-                <p class="mt-1 text-sm text-color-light-200"> {{ $step->description }} </p>
+                <p class="mt-1 text-sm text-color-light-50"> {{ $step->description }} </p>
 
                 @if (count($step->media) > 0)
                   
@@ -27,10 +27,10 @@
                                 "dotsItemClasses": "hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer",
                                 "isAutoPlay": true
                             }'
-                        class="relative">
-                        <div class="hs-carousel relative overflow-hidden w-full min-h-96 bg-white rounded-lg">
+                        class="relative m-auto">
+                        <div class="hs-carousel relative overflow-hidden w-full min-h-96 bg-color-light-50 rounded-lg">
                             <div
-                                class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
+                                class="hs-carousel-body absolute top-0 bottom-0 flex flex-nowrap transition-transform duration-700 opacity-0">
                                 @forelse ($step->media as $item)
                                     <div class="hs-carousel-slide">
                                         <div class="flex justify-center h-full  ">

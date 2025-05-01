@@ -3,6 +3,7 @@
 use App\Enums\DreamStatusEnum;
 use App\Http\Controllers\Admin\AdminPageController;
 use App\Http\Controllers\DreamController;
+use App\Http\Middleware\BlockShowingNotAprovedDreamInfoMiddleware;
 use App\Models\Dream;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
@@ -45,7 +46,7 @@ Route::group(['as' => 'dreams.'], function () {
     // Route::get('/dreams', [DreamController::class, 'index'])->name('index');
     Route::get('/dreams/create', [DreamController::class, 'create'])->name('create');
     Route::post('/dreams', [DreamController::class, 'store'])->name('store');
-    Route::get('/dreams/{dream}', [DreamController::class, 'show'])->name('show');
+    Route::get('/dreams/{dream}', [DreamController::class, 'show'])->middleware(BlockShowingNotAprovedDreamInfoMiddleware::class)->name('show');
     Route::get('/dreams/{dream}/edit', [DreamController::class, 'edit'])->name('edit');
     Route::match(['PUT', 'PATCH'], '/dreams/{dream}', [DreamController::class, 'update'])->name('update');
     Route::delete('/dreams/{dream}', [DreamController::class, 'destroy'])->name('destroy');
@@ -55,13 +56,7 @@ Route::group(['as' => 'dreams.'], function () {
 
 
 
-// Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-//     Route::get('/', [AdminPageController::class, 'dashboard'])->name('index');
-//     Route::get('/dreams', [AdminPageController::class, 'dreams'])->name('dreams');
-//     Route::get('/themes', [AdminPageController::class, 'themes'])->name('themes');
-//     // Route::get('/loader', [AdminPageController::class, 'loader'])->name('loader');
-  
-// });
+
 
 
 

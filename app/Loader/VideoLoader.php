@@ -24,7 +24,7 @@ class VideoLoader extends Loader {
 
         $path = asset('storage/' . $this->getPath());
        return <<<HTML
-             <video src='$path' alt="لودر" class="mx-auto mb-4 h-5/6 w-5/6" controls autoplay> </video>
+             <video src='$path' alt="لودر" class="mx-auto mb-4 h-5/6 w-5/6"  autoplay> </video>
        HTML;
        
         
