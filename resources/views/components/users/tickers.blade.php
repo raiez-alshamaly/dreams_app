@@ -1,10 +1,10 @@
 <div id="news-ticker"
-    class="ticker-wrap fixed bottom-0 w-full bg-gradient-to-r from-[#0c1523] to-[#0f1b2e] shadow-[0_-2px_5px_rgba(0,0,0,0.3)] text-[var(--color-light-50)] h-10 z-[100] overflow-hidden">
+    class="ticker-wrap fixed bottom-0 w-full bg-[linear-gradient(to_right,var(--color-primary-600),var(--color-secondary-400))] shadow-[0_-2px_5px_rgba(0,0,0,0.3)] text-[var(--color-light-50)] h-10 z-[100] overflow-hidden">
     <div
         class="ticker-heading flex items-center justify-center bg-color-accent-200 text-color-light-100 font-semibold h-full w-[100px] float-right text-sm">
         <i class="fas fa-check-circle me-1"></i> أحلام تحققت
     </div>
-    <div class="ticker-container h-full w-[calc(100%-100px)] overflow-hidden relative float-right">
+    <div class="ticker-container bg-[linear-gradient(to_right,var(--color-primary-600),var(--color-secondary-400))] h-full w-[calc(100%-100px)] overflow-hidden relative float-right">
         <div class="ticker-track flex whitespace-nowrap h-full items-center">
             @forelse ($fulfilledDreams as $dream)
                 <div
